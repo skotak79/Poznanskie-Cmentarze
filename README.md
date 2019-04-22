@@ -1,4 +1,5 @@
 # Poznańskie Cmentarze - wyszukiwarka miejsc pochówku <br>
+[![codebeat badge](https://codebeat.co/badges/48d3a0b4-b396-4c6e-8148-86ff39f844a4)](https://codebeat.co/projects/github-com-skotak79-poznanskie-cmentarze-master) <br>
 Technically the third version of my unfinished / demo app <br>
 <div align="center">
 <img src="Screenshots/Cemeteries.png" width="200" />
