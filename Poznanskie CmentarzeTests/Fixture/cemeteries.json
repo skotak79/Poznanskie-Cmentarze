@@ -1,0 +1,884 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.9320774078369,
+                            52.417713165283203
+                        ],
+                        [
+                            16.9320774078369,
+                            52.418754577636697
+                        ],
+                        [
+                            16.933357238769499,
+                            52.418754577636697
+                        ],
+                        [
+                            16.933357238769499,
+                            52.417713165283203
+                        ],
+                        [
+                            16.9320774078369,
+                            52.417713165283203
+                        ]
+                    ]
+                ]
+            },
+            "id": 9,
+            "properties": {
+                "cm_name": "Bohater\u00f3w Polskich",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "wojenny             ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.929458618164102,
+                            52.417888641357401
+                        ],
+                        [
+                            16.929458618164102,
+                            52.419395446777301
+                        ],
+                        [
+                            16.933139801025401,
+                            52.419395446777301
+                        ],
+                        [
+                            16.933139801025401,
+                            52.417888641357401
+                        ],
+                        [
+                            16.929458618164102,
+                            52.417888641357401
+                        ]
+                    ]
+                ]
+            },
+            "id": 13,
+            "properties": {
+                "cm_name": "Bohater\u00f3w Radzieckich",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 2,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": -1,
+                "cm_type": "wojenny             ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": -1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.929458618164102,
+                            52.417888641357401
+                        ],
+                        [
+                            16.929458618164102,
+                            52.419395446777301
+                        ],
+                        [
+                            16.933139801025401,
+                            52.419395446777301
+                        ],
+                        [
+                            16.933139801025401,
+                            52.417888641357401
+                        ],
+                        [
+                            16.929458618164102,
+                            52.417888641357401
+                        ]
+                    ]
+                ]
+            },
+            "id": 14,
+            "properties": {
+                "cm_name": "Bohater\u00f3w Radzieckich - cyrylica",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 2,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": -1,
+                "cm_type": "wojenny             ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": -1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.9148464202881,
+                            52.446548461914098
+                        ],
+                        [
+                            16.9148464202881,
+                            52.448925018310497
+                        ],
+                        [
+                            16.916545867919901,
+                            52.448925018310497
+                        ],
+                        [
+                            16.916545867919901,
+                            52.446548461914098
+                        ],
+                        [
+                            16.9148464202881,
+                            52.446548461914098
+                        ]
+                    ]
+                ]
+            },
+            "id": 15,
+            "properties": {
+                "cm_name": "Chrobrego",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 0,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 1,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.925537109375,
+                            52.419261932372997
+                        ],
+                        [
+                            16.925537109375,
+                            52.421306610107401
+                        ],
+                        [
+                            16.9310817718506,
+                            52.421306610107401
+                        ],
+                        [
+                            16.9310817718506,
+                            52.419261932372997
+                        ],
+                        [
+                            16.925537109375,
+                            52.419261932372997
+                        ]
+                    ]
+                ]
+            },
+            "id": 8,
+            "properties": {
+                "cm_name": "Garnizonowy",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "wojskowy            ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.8735160827637,
+                            52.384151458740199
+                        ],
+                        [
+                            16.8735160827637,
+                            52.387722015380902
+                        ],
+                        [
+                            16.8792114257812,
+                            52.387722015380902
+                        ],
+                        [
+                            16.8792114257812,
+                            52.384151458740199
+                        ],
+                        [
+                            16.8735160827637,
+                            52.384151458740199
+                        ]
+                    ]
+                ]
+            },
+            "id": 6,
+            "properties": {
+                "cm_name": "G\u00f3rczyn",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 1,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.816186904907202,
+                            52.383548736572301
+                        ],
+                        [
+                            16.816186904907202,
+                            52.396793365478501
+                        ],
+                        [
+                            16.838560104370099,
+                            52.396793365478501
+                        ],
+                        [
+                            16.838560104370099,
+                            52.383548736572301
+                        ],
+                        [
+                            16.816186904907202,
+                            52.383548736572301
+                        ]
+                    ]
+                ]
+            },
+            "id": 2,
+            "properties": {
+                "cm_name": "Junikowo",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 1,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 0,
+                "cm_q_field": 1,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "komunalny           ",
+                "cm_q_date_burial": 1,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.7838020324707,
+                            52.475624084472699
+                        ],
+                        [
+                            16.7838020324707,
+                            52.476913452148402
+                        ],
+                        [
+                            16.786382675170898,
+                            52.476913452148402
+                        ],
+                        [
+                            16.786382675170898,
+                            52.475624084472699
+                        ],
+                        [
+                            16.7838020324707,
+                            52.475624084472699
+                        ]
+                    ]
+                ]
+            },
+            "id": 23,
+            "properties": {
+                "cm_name": "Kiekrz",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 1,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.990047454833999,
+                            52.335735321044901
+                        ],
+                        [
+                            16.990047454833999,
+                            52.336612701416001
+                        ],
+                        [
+                            16.991559982299801,
+                            52.336612701416001
+                        ],
+                        [
+                            16.991559982299801,
+                            52.335735321044901
+                        ],
+                        [
+                            16.990047454833999,
+                            52.335735321044901
+                        ]
+                    ]
+                ]
+            },
+            "id": 19,
+            "properties": {
+                "cm_name": "Krzesiny",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 1,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.8172092437744,
+                            52.437686920166001
+                        ],
+                        [
+                            16.8172092437744,
+                            52.438434600830099
+                        ],
+                        [
+                            16.821149826049801,
+                            52.438434600830099
+                        ],
+                        [
+                            16.821149826049801,
+                            52.437686920166001
+                        ],
+                        [
+                            16.8172092437744,
+                            52.437686920166001
+                        ]
+                    ]
+                ]
+            },
+            "id": 3,
+            "properties": {
+                "cm_name": "Lubowska",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 1,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 0,
+                "cm_q_name": 0,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": 0
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.993566513061499,
+                            52.411720275878899
+                        ],
+                        [
+                            16.993566513061499,
+                            52.425388336181598
+                        ],
+                        [
+                            17.012189865112301,
+                            52.425388336181598
+                        ],
+                        [
+                            17.012189865112301,
+                            52.411720275878899
+                        ],
+                        [
+                            16.993566513061499,
+                            52.411720275878899
+                        ]
+                    ]
+                ]
+            },
+            "id": 1,
+            "properties": {
+                "cm_name": "Mi\u0142ostowo",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 1,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 0,
+                "cm_q_field": 1,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "komunalny           ",
+                "cm_q_date_burial": 1,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.9371948242188,
+                            52.457088470458999
+                        ],
+                        [
+                            16.9371948242188,
+                            52.460151672363303
+                        ],
+                        [
+                            16.940502166748001,
+                            52.460151672363303
+                        ],
+                        [
+                            16.940502166748001,
+                            52.457088470458999
+                        ],
+                        [
+                            16.9371948242188,
+                            52.457088470458999
+                        ]
+                    ]
+                ]
+            },
+            "id": 24,
+            "properties": {
+                "cm_name": "Naramowice",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.852949142456101,
+                            52.469772338867202
+                        ],
+                        [
+                            16.852949142456101,
+                            52.472160339355497
+                        ],
+                        [
+                            16.856718063354499,
+                            52.472160339355497
+                        ],
+                        [
+                            16.856718063354499,
+                            52.469772338867202
+                        ],
+                        [
+                            16.852949142456101,
+                            52.469772338867202
+                        ]
+                    ]
+                ]
+            },
+            "id": 18,
+            "properties": {
+                "cm_name": "Podolany",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 1,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.932970046997099,
+                            52.418067932128899
+                        ],
+                        [
+                            16.932970046997099,
+                            52.418460845947301
+                        ],
+                        [
+                            16.9336338043213,
+                            52.418460845947301
+                        ],
+                        [
+                            16.9336338043213,
+                            52.418067932128899
+                        ],
+                        [
+                            16.932970046997099,
+                            52.418067932128899
+                        ]
+                    ]
+                ]
+            },
+            "id": 11,
+            "properties": {
+                "cm_name": "Prawos\u0142awny",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 0,
+                "cm_q_name": 1,
+                "cm_type": "zabytkowy           ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.895757675170898,
+                            52.3597602844238
+                        ],
+                        [
+                            16.895757675170898,
+                            52.362804412841797
+                        ],
+                        [
+                            16.898775100708001,
+                            52.362804412841797
+                        ],
+                        [
+                            16.898775100708001,
+                            52.3597602844238
+                        ],
+                        [
+                            16.895757675170898,
+                            52.3597602844238
+                        ]
+                    ]
+                ]
+            },
+            "id": 12,
+            "properties": {
+                "cm_name": "Samotna",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 1,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 0,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 0,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 1,
+                "cm_q_surname": 0
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            17.029445648193398,
+                            52.343070983886697
+                        ],
+                        [
+                            17.029445648193398,
+                            52.344562530517599
+                        ],
+                        [
+                            17.0321960449219,
+                            52.344562530517599
+                        ],
+                        [
+                            17.0321960449219,
+                            52.343070983886697
+                        ],
+                        [
+                            17.029445648193398,
+                            52.343070983886697
+                        ]
+                    ]
+                ]
+            },
+            "id": 16,
+            "properties": {
+                "cm_name": "Sp\u0142awie",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 1,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 1,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.9266471862793,
+                            52.418933868408203
+                        ],
+                        [
+                            16.9266471862793,
+                            52.420272827148402
+                        ],
+                        [
+                            16.929929733276399,
+                            52.420272827148402
+                        ],
+                        [
+                            16.929929733276399,
+                            52.418933868408203
+                        ],
+                        [
+                            16.9266471862793,
+                            52.418933868408203
+                        ]
+                    ]
+                ]
+            },
+            "id": 10,
+            "properties": {
+                "cm_name": "\u015aw. Wojciecha",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 0,
+                "cm_q_name": 1,
+                "cm_type": "zabytkowy           ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.927331924438501,
+                            52.414073944091797
+                        ],
+                        [
+                            16.927331924438501,
+                            52.415603637695298
+                        ],
+                        [
+                            16.930425643920898,
+                            52.415603637695298
+                        ],
+                        [
+                            16.930425643920898,
+                            52.414073944091797
+                        ],
+                        [
+                            16.927331924438501,
+                            52.414073944091797
+                        ]
+                    ]
+                ]
+            },
+            "id": 5,
+            "properties": {
+                "cm_name": "Wielkopolan",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 1,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 0,
+                "cm_q_name": 1,
+                "cm_type": "zabytkowy           ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.8760375976562,
+                            52.413589477539098
+                        ],
+                        [
+                            16.8760375976562,
+                            52.416305541992202
+                        ],
+                        [
+                            16.880731582641602,
+                            52.416305541992202
+                        ],
+                        [
+                            16.880731582641602,
+                            52.413589477539098
+                        ],
+                        [
+                            16.8760375976562,
+                            52.413589477539098
+                        ]
+                    ]
+                ]
+            },
+            "id": 4,
+            "properties": {
+                "cm_name": "zabytkowy Je\u017cycki",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 0,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "parafialny          ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": 1
+            }
+        },
+        {
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            16.932428359985401,
+                            52.417533874511697
+                        ],
+                        [
+                            16.932428359985401,
+                            52.418224334716797
+                        ],
+                        [
+                            16.933408737182599,
+                            52.418224334716797
+                        ],
+                        [
+                            16.933408737182599,
+                            52.417533874511697
+                        ],
+                        [
+                            16.932428359985401,
+                            52.417533874511697
+                        ]
+                    ]
+                ]
+            },
+            "id": 7,
+            "properties": {
+                "cm_name": "\u017bo\u0142nierzy Brytyjskich",
+                "cm_q_quarter": 1,
+                "cm_q_surname_name": 0,
+                "cm_q_family": 0,
+                "cm_q_date_birth": 0,
+                "cm_q_date_death": 1,
+                "cm_q_field": 0,
+                "cm_q_row": 1,
+                "cm_q_name": 1,
+                "cm_type": "wojenny             ",
+                "cm_q_date_burial": 0,
+                "cm_q_surname": 1
+            }
+        }
+    ]
+}

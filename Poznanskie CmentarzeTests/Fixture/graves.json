@@ -1,0 +1,97 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                        16.784709048958401,
+                        52.476694541324697
+                ]
+            },
+            "type": "Feature",
+            "id": 348682335,
+            "properties": {
+                "g_date_birth": "1996-01-01",
+                "g_quarter": "L",
+                "g_surname": "czerwi\u0144ska",
+                "print_surname_name": "",
+                "print_name": "",
+                "g_surname_name": "",
+                "g_place": "10",
+                "g_date_death": "1996-06-11",
+                "paid": -1,
+                "cm_id": 23,
+                "cm_nr": 73849,
+                "g_row": "4",
+                "g_family": "                              ",
+                "g_name": "",
+                "print_surname": "Czerwi\u0144ska",
+                "g_field": "",
+                "g_date_burial": "0001-01-01",
+                "g_size": ""
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                        16.816935968165399,
+                        52.394332400062503
+                ]
+            },
+            "type": "Feature",
+            "id": 348551404,
+            "properties": {
+                "g_date_birth": "1900-01-01",
+                "g_quarter": "16",
+                "g_surname": "n",
+                "print_surname_name": "N N",
+                "print_name": "N",
+                "g_surname_name": "n n",
+                "g_place": "149",
+                "g_date_death": "0001-01-01",
+                "paid": 1,
+                "cm_id": 2,
+                "cm_nr": 90392,
+                "g_row": "8",
+                "g_family": "                              ",
+                "g_name": "n",
+                "print_surname": "N",
+                "g_field": "38",
+                "g_date_burial": "1999-12-08",
+                "g_size": "1"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                        16.816935968165399,
+                        52.394332400062503
+                ]
+            },
+            "type": "Feature",
+            "id": 348551404,
+            "properties": {
+                "g_date_birth": "1900-01-01",
+                "g_quarter": "16",
+                "g_surname": "n",
+                "print_surname_name": "N N",
+                "print_name": "N",
+                "g_surname_name": "n n",
+                "g_place": "149",
+                "g_date_death": "1999-12-08",
+                "paid": 1,
+                "cm_id": 2,
+                "cm_nr": 90392,
+                "g_row": "8",
+                "g_family": "                              ",
+                "g_name": "n",
+                "print_surname": "N",
+                "g_field": "38",
+                "g_date_burial": "1999-12-08",
+                "g_size": "1"
+            }
+        }
+    ]
+}
