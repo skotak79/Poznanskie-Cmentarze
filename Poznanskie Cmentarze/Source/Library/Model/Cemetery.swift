@@ -61,8 +61,27 @@ extension Cemetery {
     var type: String {
         return properties.cmType.trimmingCharacters(in: .whitespacesAndNewlines)
     }
-    var coordinates: [[[Double]]] {
+
+    var coordinates: [CLLocationCoordinate2D] {
         return geometry.coordinates
+            .flatMap {$0}
+            .map {CLLocationCoordinate2D(latitude: $0[1], longitude: $0[0])}
+    }
+
+    var bottomLeftCoordinate: CLLocationCoordinate2D {
+        return coordinates[0]
+    }
+
+    var topLeftCoordinate: CLLocationCoordinate2D {
+        return coordinates[1]
+    }
+
+    var topRightCoordinate: CLLocationCoordinate2D {
+        return coordinates[2]
+    }
+
+    var bottomRightCoordinate: CLLocationCoordinate2D {
+        return coordinates[3]
     }
 }
 

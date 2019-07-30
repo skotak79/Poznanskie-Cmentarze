@@ -17,8 +17,6 @@ final class Helper {
     static func getGeoCenterLocation(of cemetery: Cemetery) -> CLLocationCoordinate2D {
         var mapPoints = [MKMapPoint]()
         mapPoints = cemetery.coordinates
-            .flatMap {$0}
-            .map {CLLocationCoordinate2D(latitude: $0[1], longitude: $0[0])}
             .map {MKMapPoint($0)}
         let polygon = MKPolygon(points: mapPoints, count: mapPoints.count)
         return polygon.coordinate
