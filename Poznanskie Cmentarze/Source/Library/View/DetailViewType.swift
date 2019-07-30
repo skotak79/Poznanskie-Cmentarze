@@ -31,13 +31,12 @@ extension DetailViewType where Self: UIView {
         let template = "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         let overlay = MKTileOverlay(urlTemplate: template)
         overlay.canReplaceMapContent = true
+        overlay.maximumZ = 19
         mapView.addOverlay(overlay, level: .aboveLabels)
         return MKTileOverlayRenderer(tileOverlay: overlay)
     }
     
     internal func addAnnotation(annotation: MKPointAnnotation, from location: CLLocationCoordinate2D, on mapView: MKMapView) {
-        let region = MKCoordinateRegion(center: location, latitudinalMeters: 500, longitudinalMeters: 500)
-        mapView.setRegion(region, animated: true)
         annotation.coordinate = CLLocationCoordinate2D(latitude: (location.latitude), longitude: (location.longitude))
         mapView.addAnnotation(annotation)
     }

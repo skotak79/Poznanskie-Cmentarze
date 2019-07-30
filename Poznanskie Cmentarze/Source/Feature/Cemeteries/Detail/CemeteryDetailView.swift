@@ -29,7 +29,11 @@ final class CemeteryDetailView: UIView, DetailViewType {
     func addMapAnnotation(from location: CLLocationCoordinate2D) {
         addAnnotation(annotation: annotation, from: location, on: mapView)
     }
-    
+
+    func setMapRegion(region: MKCoordinateRegion) {
+        mapView.setRegion(region, animated: true)
+    }
+
     // MARK: - Setup
     
     private func setupConstraints() {

@@ -23,11 +23,17 @@ final class GraveDetailView: UIView, DetailViewType {
         super.init(frame: frame)
         setupConstraints()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
+
     func addMapAnnotation(from location: CLLocationCoordinate2D) {
         addAnnotation(annotation: annotation, from: location, on: mapView)
+    }
+
+    func setMapRegion(region: MKCoordinateRegion) {
+        mapView.setRegion(region, animated: true)
     }
 
     // MARK: - Setup
@@ -54,6 +60,7 @@ final class GraveDetailView: UIView, DetailViewType {
         ])
         setupMap()
     }
+
     private func setupMap() {
         tileRenderer = setTileRenderer(on: mapView)
         mapView.delegate = self

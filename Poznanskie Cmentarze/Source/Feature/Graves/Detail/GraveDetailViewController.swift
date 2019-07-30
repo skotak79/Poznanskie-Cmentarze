@@ -43,6 +43,8 @@ final class GraveDetailViewController: BaseController<GraveDetailView> {
     
     private func update(graveViewModel: GraveViewModel) {
         if let location = graveViewModel.location {
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: 500, longitudinalMeters: 500)
+            root.setMapRegion(region: region)
             root.addMapAnnotation(from: location)
         } else {
             self.navigationItem.rightBarButtonItem?.isEnabled = false

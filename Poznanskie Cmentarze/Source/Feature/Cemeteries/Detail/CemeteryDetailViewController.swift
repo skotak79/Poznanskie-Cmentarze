@@ -42,7 +42,13 @@ final class CemeteryDetailViewController: BaseController<CemeteryDetailView> {
     }
     
     private func update(cemetery: Cemetery) {
-        root.addMapAnnotation(from: Helper.getGeoCenterLocation(of: cemetery))
+        let centerLocation = Helper.getGeoCenterLocation(of: cemetery)
+        let latDelta = max(0.002, fabs(cemetery.topLeftCoordinate.latitude - cemetery.bottomRightCoordinate.latitude)*3)
+        let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: 0.0)
+        let region = MKCoordinateRegion(center: centerLocation, span: span)
+
+        root.setMapRegion(region: region)
+        root.addMapAnnotation(from: centerLocation)
     }
 
     // MARK: - Action
