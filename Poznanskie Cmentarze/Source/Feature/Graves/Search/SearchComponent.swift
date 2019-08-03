@@ -69,8 +69,10 @@ final class SearchComponent: NSObject, UISearchResultsUpdating, UISearchBarDeleg
 
     private func search(query: String) {
         DispatchQueue.main.async {
-            self.loadingIndicator.startAnimating()
+            self.graveListViewController.emptyView.alpha = 0
             self.graveListViewController.tableView.alpha = 0
+            self.loadingIndicator.startAnimating()
+
         }
         let name = Name(searchText: query)
         gravesService.search(name: name, completion: { [weak self] result in

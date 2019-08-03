@@ -12,7 +12,7 @@ import UIKit
 final class GraveListViewController: UIViewController {
     private(set) var tableView: UITableView!
     let adapter = Adapter<GraveViewModel, GraveCell>()
-    private let emptyView = EmptyView(text: "Nie znaleziono grobów")
+    private(set) var emptyView = EmptyView(text: "Nie znaleziono grobów")
 
     // MARK: - Life cycle
 
