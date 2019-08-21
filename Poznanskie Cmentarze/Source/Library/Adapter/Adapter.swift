@@ -27,8 +27,8 @@ final class Adapter<T, Cell: UITableViewCell>: NSObject, UITableViewDataSource, 
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         let item = items[indexPath.row]
         select?(item)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
