@@ -46,7 +46,7 @@ final class GraveListViewController: UIViewController {
     func handle(result: Result<[Grave]>) {
         switch result {
         case .success(let graves):
-            let viewModels = graves.map {GraveViewModel.init(grave: $0)}.sorted(by: >)
+            let viewModels = graves.map {GraveViewModel.init(grave: $0, cemeteryIdsWithNames: CemeteriesService.cemeteryIdsWithNames)}.sorted(by: >)
             adapter.items = viewModels
             DispatchQueue.main.async {
                 self.tableView.reloadData()

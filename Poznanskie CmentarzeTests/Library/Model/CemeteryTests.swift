@@ -61,6 +61,7 @@ class CemeteryTests: XCTestCase {
         let cemetery = try decoder.decode(Cemetery.self, from: data)
         XCTAssertEqual(cemetery.id, 1)
         XCTAssertEqual(cemetery.name, "Miłostowo")
-        XCTAssertEqual(cemetery.coordinates[0][0][0], 16.993566513061499)
+        XCTAssertEqual(cemetery.topLeftCoordinate.latitude, 52.4253883361816)
+        XCTAssertEqual(cemetery.topLeftCoordinate.longitude, 16.9935665130615)
     }
 }

@@ -59,8 +59,6 @@ final class CemeteryHomeViewController: UIViewController, UITabBarControllerDele
             switch result {
             case .success(let cemeteries):
                 self?.cemeteryListViewController.handle(cemeteries: cemeteries)
-                Helper.cemeteryIdsWithNames = Dictionary(uniqueKeysWithValues: cemeteries.map {
-                    ($0.id, $0.name)})
                 /// if cemeteries get loaded, enable grave search tab
                 DispatchQueue.main.async {
                 if !cemeteries.isEmpty, let items = self?.tabBarController?.tabBar.items {

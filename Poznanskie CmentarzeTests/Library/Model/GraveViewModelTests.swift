@@ -44,10 +44,11 @@ class GraveViewModelTests: XCTestCase {
         ]
         let data = try JSONSerialization.data(withJSONObject: json, options: [])
         let decoder = JSONDecoder()
+        let cemeteryIdsWithNames: [Int: String] = [23: "Testowy"]
         let grave = try decoder.decode(Grave.self, from: data)
-        let viewModel = GraveViewModel(grave: grave)
+        let viewModel = GraveViewModel(grave: grave, cemeteryIdsWithNames: cemeteryIdsWithNames)
         XCTAssertEqual(viewModel.cmId, 23)
-        XCTAssertEqual(viewModel.cmName, "Cmentarz ?")
+        XCTAssertEqual(viewModel.cmName, "Cmentarz Testowy")
         XCTAssertEqual(viewModel.dates.0, "1996-01-01")
         XCTAssertEqual(viewModel.location?.latitude, 52.4766945413247)
         XCTAssertEqual(viewModel.years, "1996-01-01 - 1996-06-11")

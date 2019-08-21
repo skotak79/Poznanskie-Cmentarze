@@ -11,6 +11,9 @@ import Foundation
 final class CemeteriesService {
     private let baseUrl = URL(string: "http://www.poznan.pl/featureserver/featureserver.cgi/cmentarze")!
     private let networking: Networking
+
+    // used to identify cemetery of the grave
+    static var cemeteryIdsWithNames: [Int: String]!
     
     init(networking: Networking) {
         self.networking = networking
@@ -26,6 +29,8 @@ final class CemeteriesService {
                 case .success(let data):
                     do {
                         let cemeteries = try CemeteryListResponse.make(data: data)?.features ?? []
+                        CemeteriesService.cemeteryIdsWithNames = Dictionary(uniqueKeysWithValues: cemeteries.map {
+                            ($0.id, $0.name)})
                         completion(.success(cemeteries))
                     } catch {
                         completion(.failure(.decodingError))

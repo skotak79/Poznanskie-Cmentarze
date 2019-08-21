@@ -12,8 +12,10 @@ import MapKit
 /// Or should I just add this as an extension of Grave model?
 struct GraveViewModel {
     private let grave: Grave
-    init(grave: Grave) {
+    private let cemeteryIdsWithNames: [Int: String]
+    init(grave: Grave, cemeteryIdsWithNames: [Int: String]) {
         self.grave = grave
+        self.cemeteryIdsWithNames = cemeteryIdsWithNames
     }
 }
 
@@ -57,7 +59,7 @@ extension GraveViewModel {
         return grave.coordinates.isEmpty ? nil :  CLLocationCoordinate2D(latitude: grave.coordinates[1], longitude: grave.coordinates[0])
     }
     var cmName: String {
-        return "Cmentarz \(Helper.cemeteryIdsWithNames[grave.cmId] ?? "?")"
+        return "Cmentarz \(cemeteryIdsWithNames[grave.cmId] ?? "?")"
     }
 }
 

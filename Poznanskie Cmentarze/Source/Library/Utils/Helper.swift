@@ -10,8 +10,6 @@ import Foundation
 import MapKit
 
 final class Helper {
-    /// used to identify the cemetery of the grave
-    static var cemeteryIdsWithNames: [Int: String] = [:]
 
     /// Calculate geo center of the cemetery
     static func getGeoCenterLocation(of cemetery: Cemetery) -> CLLocationCoordinate2D {
