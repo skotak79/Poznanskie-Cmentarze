@@ -23,7 +23,7 @@ final class SearchComponent: NSObject, UISearchResultsUpdating, UISearchBarDeleg
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = true
-        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = true
         searchController.searchBar.placeholder = "Nazwisko lub Imię(Imiona) Nazwisko"
         searchController.searchBar.keyboardType = .alphabet
         graveListViewController.view.addSubview(loadingIndicator)
