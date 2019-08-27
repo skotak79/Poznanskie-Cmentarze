@@ -17,9 +17,8 @@ final class AboutView: UIView {
         label.numberOfLines = 0
         label.textColor = UIColor.darkText
         label.backgroundColor = UIColor.clear
-        label.textAlignment = .center
-        label.font = UIFont.preferredCustomFont(forTextStyle: .title1)
-        label.adjustsFontForContentSizeCategory = true
+        label.textAlignment = .left
+        label.font = UIFont.preferredCustomFont(forTextStyle: .body)
         
         return label
     }()
@@ -38,7 +37,7 @@ final class AboutView: UIView {
         label.backgroundColor = UIColor.clear
         label.textAlignment = .left
         label.font = UIFont.preferredCustomFont(forTextStyle: .body)
-        label.adjustsFontForContentSizeCategory = true
+
         return label
     }()
 
@@ -56,7 +55,7 @@ final class AboutView: UIView {
     // MARK: - Setup
     
     private func setup() {
-        titleLabel.text = "Poznańskie Cmentarze - wyszukiwarka miejsca pochówku"
+        titleLabel.text = Constants.aboutScreenTitle
         contentLabel.text = Constants.aboutScreenDescription
         addSubview(scrollableView)
         NSLayoutConstraint.pinToSafeAreas(view: scrollableView, toEdgesOf: self)
