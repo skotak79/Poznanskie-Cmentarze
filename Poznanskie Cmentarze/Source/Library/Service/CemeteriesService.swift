@@ -41,6 +41,7 @@ final class CemeteriesService {
         })
     }
 }
+
 private class CemeteryListResponse: Decodable {
     let features: [Cemetery]
     static func make(data: Data) throws -> CemeteryListResponse? {

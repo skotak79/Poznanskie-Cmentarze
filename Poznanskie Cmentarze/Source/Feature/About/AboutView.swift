@@ -9,9 +9,10 @@
 import UIKit
 
 final class AboutView: UIView {
+
     private let scrollableView = ScrollableView()
-    
     private let contentView = UIView()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -55,8 +56,8 @@ final class AboutView: UIView {
     // MARK: - Setup
     
     private func setup() {
-        titleLabel.text = Constants.aboutScreenTitle
-        contentLabel.text = Constants.aboutScreenDescription
+        titleLabel.text = Info.aboutScreenTitle
+        contentLabel.text = Info.aboutScreenDescription
         addSubview(scrollableView)
         NSLayoutConstraint.pinToSafeAreas(view: scrollableView, toEdgesOf: self)
         scrollableView.setup(pairs: [
@@ -68,4 +69,26 @@ final class AboutView: UIView {
             separator.heightAnchor.constraint(equalToConstant: 0.5)
             ])
     }
+}
+
+private enum Info {
+    static let aboutScreenTitle: String = """
+    Poznańskie Cmentarze - wyszukiwarka miejsca pochówku
+    Wojciech Skotak (2019)
+    """
+
+    static let aboutScreenDescription: String = """
+    Aplikacja korzysta z danych platformy http://www.poznan.pl/api udostępnianą przez Urząd Miasta Poznania.
+
+    Druga data przy nazwisku jest datą śmierci albo pogrzebu w zależności od dostępnych danych.
+
+    Aby wyszukiwarka uwzględniała cmentarze Samotna i Lubowska należy obowiązkowo podawać imię(imiona) i nazwisko.
+
+    Ikony wykorzystane w aplikacji:
+    - 'Info (not found)' by icongeek from the Noun Project,
+    - 'Search' by Niklas Bäversten from the Noun Project,
+    - 'Graveyard' by Thomas Helbig from the Noun Project,
+    - 'Info' by Tom Walsh from the Noun Project,
+    - 'Grave' by Nick Novell from the Noun Project (Logo aplikacji)
+    """
 }

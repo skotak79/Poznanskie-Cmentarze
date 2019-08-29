@@ -50,7 +50,7 @@ final class GravesService {
                 parameters(for: .regular(name: name.firstName, surname: name.surname)),
                 parameters(for: .lubowska(surnameName: "\(name.surname) \(name.firstName)")),
                 parameters(for: .samotna(surnameName: "\(name.surname) \(name.firstName)"))
-                ]
+            ]
         } else {
             parametersArray = [parameters(for: .surname(surname: name.surname))]
         }
@@ -60,13 +60,13 @@ final class GravesService {
 
         for resource in resources {
             downloadGroup.enter()
-                self.tasks.append(self.networking.fetch(resource: resource, completion: { result in
+            self.tasks.append(self.networking.fetch(resource: resource, completion: { result in
                 switch result {
                 case .success(let data):
                     do {
                         let graves = try GraveListResponse.make(data: data)?.features ?? []
                         self.addGraves(graves: graves)
-                        } catch {
+                    } catch {
                         storedError = LoadingError.decodingError
                     }
                 case .failure(let error):
@@ -85,7 +85,7 @@ final class GravesService {
                 completion(Result.success(self.graves))
             }
         }
-}
+    }
     /// Safe method to add graves
     private func addGraves(graves: [Grave]) {
         concurrentGraveQueue.async(flags: .barrier) { [weak self] in
@@ -99,7 +99,7 @@ final class GravesService {
     /// make parameters for given grave search category
     private func parameters(for category: GraveSearchCategory) -> [String: String] {
         var parameters = [String: String]()
-        parameters.updateValue(String(Constants.maxGraves), forKey: "maxFeatures")
+        parameters.updateValue(String(Config.maxGraves), forKey: "maxFeatures")
         parameters.updateValue("g_surname_name,cm_id", forKey: "queryable")
         switch category {
         case .surname(let surname):
@@ -111,10 +111,10 @@ final class GravesService {
             parameters.updateValue("g_name,g_surname", forKey: "queryable")
         case .lubowska(let surnameName):
             parameters.updateValue(surnameName, forKey: "g_surname_name")
-            parameters.updateValue(String(describing: Constants.idForLubowskaCemetery), forKey: "cm_id")
+            parameters.updateValue(String(describing: IdsForUniqueCemeteries.lubowska), forKey: "cm_id")
         case .samotna(let surnameName):
             parameters.updateValue(surnameName, forKey: "g_surname_name")
-            parameters.updateValue(String(describing: Constants.idForSamotnaCemetery), forKey: "cm_id")
+            parameters.updateValue(String(describing: IdsForUniqueCemeteries.samotna), forKey: "cm_id")
         }
         return parameters
     }
@@ -125,4 +125,8 @@ private class GraveListResponse: Decodable {
     static func make(data: Data) throws -> GraveListResponse? {
         return try JSONDecoder().decode(GraveListResponse.self, from: data)
     }
+}
+
+private enum Config {
+    static let maxGraves = 100
 }

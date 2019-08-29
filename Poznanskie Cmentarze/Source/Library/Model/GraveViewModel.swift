@@ -9,10 +9,11 @@
 import Foundation
 import MapKit
 
-/// Or should I just add this as an extension of Grave model?
 struct GraveViewModel {
+
     private let grave: Grave
     private let cemeteryIdsWithNames: [Int: String]
+
     init(grave: Grave, cemeteryIdsWithNames: [Int: String]) {
         self.grave = grave
         self.cemeteryIdsWithNames = cemeteryIdsWithNames
@@ -22,13 +23,13 @@ struct GraveViewModel {
 extension GraveViewModel {
 
     var nameAndSurname: String {
-        guard grave.cmId == Constants.idForLubowskaCemetery || grave.cmId == Constants.idForSamotnaCemetery else {
+        guard grave.cmId == IdsForUniqueCemeteries.lubowska || grave.cmId == IdsForUniqueCemeteries.samotna else {
             return "\(grave.name.isEmpty ? "?" : grave.name.capitalized) \(grave.surname.capitalized)"
         }
         return "\(Name(surnameName: grave.surnameName).firstName.capitalized)  \(Name(surnameName: grave.surnameName).surname.capitalized)"
     }
     private var tempDate: String {
-        return (grave.dateDeath == Constants.noData) ? grave.dateBurial : grave.dateDeath
+        return (grave.dateDeath == Values.noData) ? grave.dateBurial : grave.dateDeath
     }
 
     /// for sorting purposes - death or burial date
@@ -36,8 +37,8 @@ extension GraveViewModel {
         return Helper.date(from: tempDate)
     }
     var dates: (String, String) {
-        let birthDate = (grave.dateBirth == Constants.noData) ? "?" : grave.dateBirth
-        let secondDate = (tempDate == Constants.noData) ? "?" : tempDate
+        let birthDate = (grave.dateBirth == Values.noData) ? "?" : grave.dateBirth
+        let secondDate = (tempDate == Values.noData) ? "?" : tempDate
         return (birthDate, secondDate)
     }
     var years: String {
@@ -89,4 +90,8 @@ extension GraveViewModel {
 
         return subtitleString
     }
+}
+
+private enum Values {
+    static let noData = "0001-01-01"
 }
