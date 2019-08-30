@@ -47,41 +47,47 @@ final class NetworkService: Networking {
     init(configuration: URLSessionConfiguration = URLSessionConfiguration.default) {
         self.session = URLSession(configuration: configuration)
     }
+
     @discardableResult func fetch(resource: Resource, completion: @escaping (Result<Data>) -> Void) -> URLSessionTask? {
         guard let request = makeRequest(resource: resource) else {
             completion(.failure(.requestMakingFailure))
             return nil
         }
         print(request.url!.absoluteString)
-        let task = session.dataTask(with: request, completionHandler: { data, response, error in
-            guard self.isNetworkReachable() else {
+        let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in
+
+            guard let self = self, self.isNetworkReachable() else {
                 completion(Result.failure(LoadingError.networkUnavailable))
                 return
             }
-            // serch was cancelled
-            if let error = error as NSError?, error.code == -999 {
+
+            if let error = error {
+                debugPrint("DataTask error: \(error.localizedDescription)")
                 return
             }
+
             guard let response = response as? HTTPURLResponse, let data = data else {
                 completion(.failure(.serverFailure))
                 return
             }
-            if 200 ..< 300 ~= response.statusCode {
+
+            switch response.statusCode {
+            case 200..<300:
                 completion(.success(data))
                 return
-            } else if 400 ..< 500 ~= response.statusCode {
+            case 400..<500:
                 completion(.failure(.invalidStatusCode(code: response.statusCode)))
                 return
-            } else {
+            default:
                 print("Response statuscode \(response.statusCode)")
                 completion(.failure(.serverFailure))
-                print(error.debugDescription )
                 return
             }
         })
         task.resume()
         return task
     }
+
     /// Convenient method to make request
     ///
     /// - Parameters:
@@ -104,6 +110,7 @@ final class NetworkService: Networking {
         request.httpMethod = resource.httpMethod
         return request
     }
+
     private func isNetworkReachable() -> Bool {
         var flags = SCNetworkReachabilityFlags()
         SCNetworkReachabilityGetFlags(self.reachability!, &flags)

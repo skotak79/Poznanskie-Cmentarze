@@ -74,6 +74,7 @@
 		015EA02523158CA700095C1C /* ClosureSleeve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA02423158CA700095C1C /* ClosureSleeve.swift */; };
 		015EA02723158CE500095C1C /* UIControl+addAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA02623158CE500095C1C /* UIControl+addAction.swift */; };
 		015EA02923158D4A00095C1C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA02823158D4A00095C1C /* DetailViewController.swift */; };
+		01BA647E2319358300C9AB0E /* GraveCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BA647D2319358300C9AB0E /* GraveCollection.swift */; };
 		01D838A32264F4D0006802B3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D838A22264F4D0006802B3 /* R.generated.swift */; };
 		C18FCBC9AECD883EEC504AA7 /* Pods_Poznanskie_CmentarzeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A729B042A410E77DE0E1E3A9 /* Pods_Poznanskie_CmentarzeUITests.framework */; };
 		C787C1CAC25F87EF8BE88493 /* Pods_Poznanskie_CmentarzeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C54266032B6628F69B1256 /* Pods_Poznanskie_CmentarzeTests.framework */; };
@@ -171,6 +172,7 @@
 		015EA02423158CA700095C1C /* ClosureSleeve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureSleeve.swift; sourceTree = "<group>"; };
 		015EA02623158CE500095C1C /* UIControl+addAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+addAction.swift"; sourceTree = "<group>"; };
 		015EA02823158D4A00095C1C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		01BA647D2319358300C9AB0E /* GraveCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveCollection.swift; sourceTree = "<group>"; };
 		01D838A22264F4D0006802B3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		0299287C5C0A71CC68354BB9 /* Pods-Poznanskie Cmentarze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poznanskie Cmentarze.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poznanskie Cmentarze/Pods-Poznanskie Cmentarze.debug.xcconfig"; sourceTree = "<group>"; };
 		09346403EFE5CD9BE474937F /* Pods-Poznanskie CmentarzeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poznanskie CmentarzeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poznanskie CmentarzeTests/Pods-Poznanskie CmentarzeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				01050EFC2261F7EB004404B6 /* GraveViewModel.swift */,
+				01BA647D2319358300C9AB0E /* GraveCollection.swift */,
 				01050EFD2261F7EB004404B6 /* Cemetery.swift */,
 				01050EFE2261F7EB004404B6 /* Grave.swift */,
 				01050EFF2261F7EB004404B6 /* Name.swift */,
@@ -915,6 +918,7 @@
 				01050F342261F7EB004404B6 /* UINavigationController+openMaps.swift in Sources */,
 				01050F2A2261F7EB004404B6 /* Networking.swift in Sources */,
 				01050F2E2261F7EB004404B6 /* Debouncer.swift in Sources */,
+				01BA647E2319358300C9AB0E /* GraveCollection.swift in Sources */,
 				01050F452261F7EB004404B6 /* AppFlowController.swift in Sources */,
 				01050F302261F7EB004404B6 /* UIViewController+Extensions.swift in Sources */,
 				01050F4F2261F7EB004404B6 /* CemeteryCell.swift in Sources */,

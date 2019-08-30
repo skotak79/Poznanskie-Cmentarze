@@ -18,15 +18,6 @@ final class GravesService {
     private let baseUrl = URL(string: "http://www.poznan.pl/featureserver/featureserver.cgi/groby")!
     private let networking: Networking
     private var tasks: [URLSessionTask?] = []
-    private let concurrentGraveQueue = DispatchQueue(label: "graveQueue", attributes: .concurrent)
-    private var tempGraves: [Grave] = []
-    var graves: [Grave] {
-        var gravesCopy: [Grave]!
-        concurrentGraveQueue.sync {
-            gravesCopy = self.tempGraves
-        }
-        return gravesCopy
-    }
 
     init(networking: Networking) {
         self.networking = networking
@@ -39,24 +30,21 @@ final class GravesService {
     ///   - completion: called when operation finishes
     /// - Returns: Void
     func search(name: Name, completion: @escaping (Result<[Grave]>) -> Void) {
-        var storedError: LoadingError?
-        var parametersArray = [[String: String]]()
 
-        tasks.forEach {$0?.cancel()}
-        tempGraves.removeAll()
-
-        if !name.firstName.isEmpty {
-            parametersArray = [
-                parameters(for: .regular(name: name.firstName, surname: name.surname)),
-                parameters(for: .lubowska(surnameName: "\(name.surname) \(name.firstName)")),
-                parameters(for: .samotna(surnameName: "\(name.surname) \(name.firstName)"))
-            ]
-        } else {
-            parametersArray = [parameters(for: .surname(surname: name.surname))]
-        }
+        let parametersArray = getParametersArray(forName: name)
         let resources = parametersArray.map {Resource.init(url: baseUrl, parameters: $0)}
 
+        fetchGraves(with: resources, completion)
+    }
+
+    private func fetchGraves(with resources: [Resource], _ completion: @escaping (Result<[Grave]>) -> Void) {
+
+        var storedError: LoadingError?
+        let errorSyncQueue = DispatchQueue(label: "FetchGraves.ErrorSync")
         let downloadGroup = DispatchGroup()
+        let graveCollection = GraveCollection()
+
+        tasks.forEach {$0?.cancel()}
 
         for resource in resources {
             downloadGroup.enter()
@@ -65,40 +53,46 @@ final class GravesService {
                 case .success(let data):
                     do {
                         let graves = try GraveListResponse.make(data: data)?.features ?? []
-                        self.addGraves(graves: graves)
+                        graveCollection.add(graves: graves)
                     } catch {
-                        storedError = LoadingError.decodingError
+                        errorSyncQueue.sync {
+                            storedError = LoadingError.decodingError
+                        }
                     }
                 case .failure(let error):
-                    print("error --------")
-                    storedError = error
+                    errorSyncQueue.sync {
+                        storedError = error
+                    }
                 }
-                print("downloadGroup leave")
                 downloadGroup.leave()
             }))
         }
 
         downloadGroup.notify(queue: DispatchQueue.main) {
-            if storedError != nil {
-                completion(Result.failure(storedError!))
+            if let storedError = storedError {
+                completion(Result.failure(storedError))
             } else {
-                completion(Result.success(self.graves))
+                completion(Result.success(graveCollection.graves))
             }
         }
     }
-    /// Safe method to add graves
-    private func addGraves(graves: [Grave]) {
-        concurrentGraveQueue.async(flags: .barrier) { [weak self] in
-            guard let self = self else {
-                return
-            }
-            self.tempGraves += graves
+
+    private func getParametersArray(forName name: Name) -> [[String: String]] {
+
+        if !name.firstName.isEmpty {
+            return [
+                getParameters(for: .regular(name: name.firstName, surname: name.surname)),
+                getParameters(for: .lubowska(surnameName: "\(name.surname) \(name.firstName)")),
+                getParameters(for: .samotna(surnameName: "\(name.surname) \(name.firstName)"))
+            ]
+        } else {
+            return [getParameters(for: .surname(surname: name.surname))]
         }
     }
 
     /// make parameters for given grave search category
-    private func parameters(for category: GraveSearchCategory) -> [String: String] {
-        var parameters = [String: String]()
+    private func getParameters(for category: GraveSearchCategory) -> [String: String] {
+        var parameters: [String: String] = [:]
         parameters.updateValue(String(Config.maxGraves), forKey: "maxFeatures")
         parameters.updateValue("g_surname_name,cm_id", forKey: "queryable")
         switch category {
