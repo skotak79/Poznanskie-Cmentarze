@@ -63,6 +63,7 @@ final class NetworkService: Networking {
 
             if let error = error {
                 debugPrint("DataTask error: \(error.localizedDescription)")
+                completion(.failure(.serverFailure))
                 return
             }
 
