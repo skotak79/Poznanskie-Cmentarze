@@ -27,6 +27,8 @@ final class CemeteryFlowController: UINavigationController {
     
     private func startDetail(cemetery: Cemetery) {
         let controller = CemeteryDetailViewController(cemetery: cemetery)
+        controller.hidesBottomBarWhenPushed = true
+
         controller.openMaps = { [weak self] coordinates, description in
             self?.displayMapsWarning(coordinates: coordinates, description: description)
         }

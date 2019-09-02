@@ -32,7 +32,7 @@ final class DetailView: UIView {
         addSubview(mapView)
         addSubview(segmentedControl)
 
-        NSLayoutConstraint.pin(view: mapView, toEdgesOf: self)
+        NSLayoutConstraint.pinToSafeAreas(view: mapView, toEdgesOf: self)
         NSLayoutConstraint.activate([
             segmentedControl.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
             segmentedControl.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -16)

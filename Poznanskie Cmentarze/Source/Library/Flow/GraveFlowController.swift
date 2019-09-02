@@ -27,6 +27,7 @@ final class GraveFlowController: UINavigationController {
     
     private func startDetail(graveViewModel: GraveViewModel) {
         let controller = GraveDetailViewController(graveViewModel: graveViewModel)
+        controller.hidesBottomBarWhenPushed = true
         controller.openMaps = { [weak self] coordinates, description in
             self?.displayMapsWarning(coordinates: coordinates, description: description)
         }
