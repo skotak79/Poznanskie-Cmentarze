@@ -59,12 +59,6 @@ final class CemeteryHomeViewController: UIViewController, UITabBarControllerDele
             switch result {
             case .success(let cemeteries):
                 self?.cemeteryListViewController.handle(cemeteries: cemeteries)
-                /// if cemeteries get loaded, enable grave search tab
-                DispatchQueue.main.async {
-                if !cemeteries.isEmpty, let items = self?.tabBarController?.tabBar.items {
-                        items[1].isEnabled = true
-                    }
-                }
             case .failure(let error):
                 self?.showErrorMessage(withError: error)
             }

@@ -21,8 +21,6 @@ final class TabBarFlowController: UITabBarController {
         graveFlowController.start()
         aboutViewController.start()
         self.viewControllers = tabs
-        // disable graves tab until cemeteries gets loaded
-        self.tabBar.items?[1].isEnabled = false
         self.selectedIndex = 0
     }
 }
