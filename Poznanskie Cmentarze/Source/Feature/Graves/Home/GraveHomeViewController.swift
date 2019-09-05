@@ -24,7 +24,7 @@ final class GraveHomeViewController: UIViewController {
         self.gravesService = gravesService
         self.searchComponent = SearchComponent(gravesService: gravesService)
         super.init(nibName: nil, bundle: nil)
-        self.title = "Wyszukiwarka grobów"
+        self.title = "Wyszukiwarka miejsc pochówku"
     }
 
     required init?(coder aDecoder: NSCoder) {

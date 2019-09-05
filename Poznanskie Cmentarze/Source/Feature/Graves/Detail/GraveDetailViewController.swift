@@ -20,7 +20,6 @@ final class GraveDetailViewController: BaseController<DetailView>, DetailViewCon
     required init(graveViewModel: GraveViewModel) {
         self.graveViewModel = graveViewModel
         super.init(nibName: nil, bundle: nil)
-        self.title = graveViewModel.nameAndSurname
     }
 
     required init?(coder aDecoder: NSCoder) {

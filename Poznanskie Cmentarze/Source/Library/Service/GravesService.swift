@@ -8,9 +8,8 @@
 
 enum GraveSearchCategory {
     case regular(name: String, surname: String)
-    case surname(surname: String)
-    case lubowska(surnameName: String)
-    case samotna(surnameName: String)
+    case surnameOnly(surname: String)
+    case unique(surnameName: String, id: Int)
 }
 
 import Foundation
@@ -37,6 +36,10 @@ final class GravesService {
         fetchGraves(with: resources, completion)
     }
 
+    func cancelSearch() {
+        tasks.forEach {$0?.cancel()}
+    }
+
     private func fetchGraves(with resources: [Resource], _ completion: @escaping (Result<[Grave]>) -> Void) {
 
         var storedError: LoadingError?
@@ -44,7 +47,7 @@ final class GravesService {
         let downloadGroup = DispatchGroup()
         let graveCollection = GraveCollection()
 
-        tasks.forEach {$0?.cancel()}
+        cancelSearch()
 
         for resource in resources {
             downloadGroup.enter()
@@ -82,11 +85,11 @@ final class GravesService {
         if !name.firstName.isEmpty {
             return [
                 getParameters(for: .regular(name: name.firstName, surname: name.surname)),
-                getParameters(for: .lubowska(surnameName: "\(name.surname) \(name.firstName)")),
-                getParameters(for: .samotna(surnameName: "\(name.surname) \(name.firstName)"))
+                getParameters(for: .unique(surnameName: "\(name.surname) \(name.firstName)", id: IdsForUniqueCemeteries.lubowska)),
+                getParameters(for: .unique(surnameName: "\(name.surname) \(name.firstName)", id: IdsForUniqueCemeteries.samotna))
             ]
         } else {
-            return [getParameters(for: .surname(surname: name.surname))]
+            return [getParameters(for: .surnameOnly(surname: name.surname))]
         }
     }
 
@@ -96,19 +99,16 @@ final class GravesService {
         parameters.updateValue(String(Config.maxGraves), forKey: "maxFeatures")
         parameters.updateValue("g_surname_name,cm_id", forKey: "queryable")
         switch category {
-        case .surname(let surname):
+        case .surnameOnly(let surname):
             parameters.updateValue(surname, forKey: "g_surname")
             parameters.updateValue("g_surname", forKey: "queryable")
         case .regular(let name, let surname):
             parameters.updateValue(surname, forKey: "g_surname")
             parameters.updateValue(name, forKey: "g_name")
             parameters.updateValue("g_name,g_surname", forKey: "queryable")
-        case .lubowska(let surnameName):
+        case .unique(let surnameName, let id):
             parameters.updateValue(surnameName, forKey: "g_surname_name")
-            parameters.updateValue(String(describing: IdsForUniqueCemeteries.lubowska), forKey: "cm_id")
-        case .samotna(let surnameName):
-            parameters.updateValue(surnameName, forKey: "g_surname_name")
-            parameters.updateValue(String(describing: IdsForUniqueCemeteries.samotna), forKey: "cm_id")
+            parameters.updateValue(String(describing: id), forKey: "cm_id")
         }
         return parameters
     }

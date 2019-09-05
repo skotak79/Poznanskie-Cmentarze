@@ -19,8 +19,8 @@ final class AboutView: UIView {
         label.textColor = UIColor.darkText
         label.backgroundColor = UIColor.clear
         label.textAlignment = .left
-        label.font = UIFont.preferredCustomFont(forTextStyle: .body)
-        
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+
         return label
     }()
 
@@ -37,7 +37,7 @@ final class AboutView: UIView {
         label.textColor = UIColor.darkText
         label.backgroundColor = UIColor.clear
         label.textAlignment = .left
-        label.font = UIFont.preferredCustomFont(forTextStyle: .body)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
 
         return label
     }()

@@ -23,27 +23,20 @@ struct GraveViewModel {
 extension GraveViewModel {
 
     var nameAndSurname: String {
-        guard grave.cmId == IdsForUniqueCemeteries.lubowska || grave.cmId == IdsForUniqueCemeteries.samotna else {
-            return "\(grave.name.isEmpty ? "?" : grave.name.capitalized) \(grave.surname.capitalized)"
-        }
-        return "\(Name(surnameName: grave.surnameName).firstName.capitalized)  \(Name(surnameName: grave.surnameName).surname.capitalized)"
-    }
-    private var tempDate: String {
-        return (grave.dateDeath == Values.noData) ? grave.dateBurial : grave.dateDeath
+        return ("\(grave.nameAndSurname.0.capitalized) \( grave.nameAndSurname.1.capitalized)")
     }
 
-    /// for sorting purposes - death or burial date
-    var dateToCompare: Date {
-        return Helper.date(from: tempDate)
+    private var tempDate: String {
+        return (grave.dateDeath == Values.emptyData) ? grave.dateBurial : grave.dateDeath
     }
-    var dates: (String, String) {
-        let birthDate = (grave.dateBirth == Values.noData) ? "?" : grave.dateBirth
-        let secondDate = (tempDate == Values.noData) ? "?" : tempDate
-        return (birthDate, secondDate)
-    }
+
     var years: String {
-        return "\(dates.0) - \(dates.1)"
+        let birthDate = (grave.dateBirth == Values.emptyData) ? "?" : grave.dateBirth
+        let secondDate = (tempDate == Values.emptyData) ? "?" : tempDate
+
+        return ("\(birthDate) - \(secondDate)")
     }
+
     var fieldQuarterRowPlace: String {
         let positionDetails = [
             (grave.field.isEmpty) ? "" : "Pole: \(grave.field)",
@@ -53,18 +46,22 @@ extension GraveViewModel {
         ]
         return positionDetails.joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
     }
-    var cmId: Int {
-        return grave.cmId
-    }
+
     var location: CLLocationCoordinate2D? {
-        return grave.coordinates.isEmpty ? nil :  CLLocationCoordinate2D(latitude: grave.coordinates[1], longitude: grave.coordinates[0])
+        return grave.location
     }
+
     var cmName: String {
         return "Cmentarz \(cemeteryIdsWithNames[grave.cmId] ?? "?")"
     }
 }
 
 extension GraveViewModel: Comparable {
+
+    private var dateToCompare: Date {
+        return tempDate.toDate()
+    }
+
     static func == (lhs: GraveViewModel, rhs: GraveViewModel) -> Bool {
         return lhs.dateToCompare == rhs.dateToCompare
     }
@@ -79,19 +76,19 @@ extension GraveViewModel: Comparable {
 extension GraveViewModel {
 
     var attributedTitle: NSAttributedString {
-        let titleAttributes = [NSAttributedString.Key.font: UIFont.preferredCustomFont(forTextStyle: .headline), NSAttributedString.Key.foregroundColor: UIColor.darkText]
-        let titleString = NSMutableAttributedString(string: self.nameAndSurname, attributes: titleAttributes)
-        
+        let font = UIFont.preferredCustomFont(forTextStyle: .headline)
+        let titleString = self.nameAndSurname.attributtedString(with: font, foregroundColor: .darkText)
+
         return titleString
     }
     var attributedSubtitle: NSAttributedString {
-        let subtitleAttributes = [NSAttributedString.Key.font: UIFont.preferredCustomFont(forTextStyle: .subheadline), NSAttributedString.Key.foregroundColor: UIColor.darkText]
-        let subtitleString = NSMutableAttributedString(string: self.years, attributes: subtitleAttributes)
+        let font = UIFont.preferredCustomFont(forTextStyle: .subheadline)
+        let subtitleString = self.years.attributtedString(with: font, foregroundColor: .darkText)
 
         return subtitleString
     }
 }
 
 private enum Values {
-    static let noData = "0001-01-01"
+    static let emptyData = "0001-01-01"
 }

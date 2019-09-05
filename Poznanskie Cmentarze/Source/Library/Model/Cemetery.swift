@@ -111,14 +111,16 @@ extension Properties {
 
 extension Cemetery {
     var attributedTitle: NSAttributedString {
-        let titleAttributes = [NSAttributedString.Key.font: UIFont.preferredCustomFont(forTextStyle: .headline), NSAttributedString.Key.foregroundColor: UIColor.darkText]
-        let titleString = NSMutableAttributedString(string: self.name, attributes: titleAttributes)
+        let font = UIFont.preferredCustomFont(forTextStyle: .headline)
+        let titleString = self.name.attributtedString(with: font, foregroundColor: .darkText)
 
         return titleString
     }
     var attributedSubtitle: NSAttributedString {
-        let subtitleAttributes = [NSAttributedString.Key.font: UIFont.preferredCustomFont(forTextStyle: .caption1), NSAttributedString.Key.foregroundColor: UIColor.darkGray]
-        let subtitleString = NSMutableAttributedString(string: self.type, attributes: subtitleAttributes)
+        let font = UIFont.preferredCustomFont(forTextStyle: .caption1)
+        let subtitleString = self.type.attributtedString(with: font, foregroundColor: .darkGray)
+
         return subtitleString
+
     }
 }

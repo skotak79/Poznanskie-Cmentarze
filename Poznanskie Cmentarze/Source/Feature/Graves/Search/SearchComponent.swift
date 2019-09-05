@@ -16,21 +16,26 @@ final class SearchComponent: NSObject, UISearchResultsUpdating, UISearchBarDeleg
     /// Avoid making lots of requests when user types fast
     /// This throttles the search requests
     let debouncer = Debouncer(delay: 1)
+
     required init(gravesService: GravesService) {
         self.gravesService = gravesService
         self.searchController = UISearchController(searchResultsController: graveListViewController)
         super.init()
+        setupSearchController()
+        graveListViewController.view.addSubview(loadingIndicator)
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: graveListViewController.view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: graveListViewController.view.centerYAnchor, constant: -100)
+            ])
+    }
+
+    private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = true
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.searchBar.placeholder = "Nazwisko lub Imię(Imiona) Nazwisko"
         searchController.searchBar.keyboardType = .alphabet
-        graveListViewController.view.addSubview(loadingIndicator)
-        NSLayoutConstraint.activate([
-            loadingIndicator.centerXAnchor.constraint(equalTo: graveListViewController.view.centerXAnchor),
-            loadingIndicator.centerYAnchor.constraint(equalTo: graveListViewController.view.centerYAnchor, constant: -100)
-            ])
     }
 
     /// Add search bar to view controller
@@ -58,6 +63,11 @@ final class SearchComponent: NSObject, UISearchResultsUpdating, UISearchBarDeleg
         }
     }
 
+    // is it necessary
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        gravesService.cancelSearch()
+    }
+
     // MARK: - Logic
 
     private func performSearch() {
@@ -68,12 +78,7 @@ final class SearchComponent: NSObject, UISearchResultsUpdating, UISearchBarDeleg
     }
 
     private func search(query: String) {
-        DispatchQueue.main.async {
-            self.graveListViewController.emptyView.alpha = 0
-            self.graveListViewController.tableView.alpha = 0
-            self.loadingIndicator.startAnimating()
-
-        }
+        showLoadingIndicator()
         let name = Name(searchText: query)
         gravesService.search(name: name, completion: { [weak self] result in
             switch result {
@@ -83,13 +88,21 @@ final class SearchComponent: NSObject, UISearchResultsUpdating, UISearchBarDeleg
                 }
                 fallthrough
             default:
-                self?.hideIndicator()
+                self?.hideLoadingIndicator()
                 self?.graveListViewController.handle(result: result)
                 }
             })
     }
 
-    private func hideIndicator() {
+    private func showLoadingIndicator() {
+        DispatchQueue.main.async {
+            self.graveListViewController.emptyView.alpha = 0
+            self.graveListViewController.tableView.alpha = 0
+            self.loadingIndicator.startAnimating()
+        }
+    }
+
+    private func hideLoadingIndicator() {
         DispatchQueue.main.async {
             self.loadingIndicator.stopAnimating()
             self.graveListViewController.tableView.alpha = 1

@@ -66,6 +66,7 @@ extension Grave {
         case properties
         case type
     }
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(Int.self, forKey: .id)
@@ -73,18 +74,35 @@ extension Grave {
         properties = try values.decode(Properties.self, forKey: .properties)
         type = try values.decode(String.self, forKey: .type)
     }
-    var coordinates: [Double] {
-        return geometry.coordinates
+
+    var location: CLLocationCoordinate2D? {
+        let coordinates = self.geometry.coordinates
+
+        return coordinates.isEmpty ? nil : CLLocationCoordinate2D(latitude: coordinates[1], longitude: coordinates[0])
     }
-    var name: String {
+
+    private var name: String {
         return properties.gName
     }
-    var surname: String {
+
+    private var surname: String {
         return properties.gSurname
     }
-    var surnameName: String {
+
+    private var surnameName: String {
         return properties.gSurnameName
     }
+
+    var nameAndSurname: (String, String) {
+        guard self.cmId == IdsForUniqueCemeteries.lubowska || self.cmId == IdsForUniqueCemeteries.samotna else {
+            return (name.isEmpty ? "?" : name, surname)
+        }
+        let localSurnameName = Name(surnameName: surnameName)
+        let firstName = localSurnameName.firstName
+        let surname = localSurnameName.surname
+        return (firstName, surname)
+    }
+
     var dateBirth: String {
         return properties.gDateBirth
     }

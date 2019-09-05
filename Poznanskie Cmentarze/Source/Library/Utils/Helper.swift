@@ -19,12 +19,4 @@ final class Helper {
         let polygon = MKPolygon(points: mapPoints, count: mapPoints.count)
         return polygon.coordinate
     }
-
-    static func date(from string: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: string)
-        return date!
-    }
 }
