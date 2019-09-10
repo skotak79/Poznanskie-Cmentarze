@@ -20,7 +20,7 @@ final class CemeteryDetailViewController: BaseController<DetailView>, DetailView
     required init(cemetery: Cemetery) {
         self.cemetery = cemetery
         super.init(nibName: nil, bundle: nil)
-        self.title = cemetery.name
+        self.title = cemetery.properties.name
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -55,12 +55,12 @@ final class CemeteryDetailViewController: BaseController<DetailView>, DetailView
 
         let annotation = MKPointAnnotation()
         annotation.coordinate = centerLocation
-        annotation.title = cemetery.name
-        annotation.subtitle = cemetery.type
+        annotation.title = cemetery.properties.name
+        annotation.subtitle = cemetery.properties.type.trimmingCharacters(in: .whitespacesAndNewlines)
         root.mapView.addAnnotation(annotation)
     }
 
     @objc private func openMapsButtonTouched() {
-        openMaps?(Helper.getGeoCenterLocation(of: cemetery), "Cmentarz \(cemetery.name)")
+        openMaps?(Helper.getGeoCenterLocation(of: cemetery), "Cmentarz \(cemetery.properties.name)")
     }
 }

@@ -27,11 +27,11 @@ extension GraveViewModel {
     }
 
     private var tempDate: String {
-        return (grave.dateDeath == Values.emptyData) ? grave.dateBurial : grave.dateDeath
+        return (grave.properties.dateDeath == Values.emptyData) ? grave.properties.dateBurial : grave.properties.dateDeath
     }
 
     var years: String {
-        let birthDate = (grave.dateBirth == Values.emptyData) ? "?" : grave.dateBirth
+        let birthDate = (grave.properties.dateBirth == Values.emptyData) ? "?" : grave.properties.dateBirth
         let secondDate = (tempDate == Values.emptyData) ? "?" : tempDate
 
         return ("\(birthDate) - \(secondDate)")
@@ -39,10 +39,10 @@ extension GraveViewModel {
 
     var fieldQuarterRowPlace: String {
         let positionDetails = [
-            (grave.field.isEmpty) ? "" : "Pole: \(grave.field)",
-            (grave.quarter.isEmpty) ? "" : "Kwatera: \(grave.quarter)",
-            (grave.row.isEmpty) ? "" : "Rząd: \(grave.row)",
-            (grave.place.isEmpty) ? "" : "Miejsce: \(grave.place)"
+            (grave.properties.field.isEmpty) ? "" : "Pole: \(grave.properties.field)",
+            (grave.properties.quarter.isEmpty) ? "" : "Kwatera: \(grave.properties.quarter)",
+            (grave.properties.row.isEmpty) ? "" : "Rząd: \(grave.properties.row)",
+            (grave.properties.place.isEmpty) ? "" : "Miejsce: \(grave.properties.place)"
         ]
         return positionDetails.joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
     }
@@ -52,7 +52,7 @@ extension GraveViewModel {
     }
 
     var cmName: String {
-        return "Cmentarz \(cemeteryIdsWithNames[grave.cmId] ?? "?")"
+        return "Cmentarz \(cemeteryIdsWithNames[grave.properties.cmId] ?? "?")"
     }
 }
 

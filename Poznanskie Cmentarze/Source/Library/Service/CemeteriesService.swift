@@ -30,7 +30,7 @@ final class CemeteriesService {
                     do {
                         let cemeteries = try CemeteryListResponse.make(data: data)?.features ?? []
                         CemeteriesService.cemeteryIdsWithNames = Dictionary(uniqueKeysWithValues: cemeteries.map {
-                            ($0.id, $0.name)})
+                            ($0.id, $0.properties.name)})
                         completion(.success(cemeteries))
                     } catch {
                         completion(.failure(.decodingError))
