@@ -92,12 +92,12 @@ struct R: Rswift.Validatable {
   struct image {
     /// Image `Default-568h`.
     static let default568h = Rswift.ImageResource(bundle: R.hostingBundle, name: "Default-568h")
-    /// Image `graves`.
-    static let graves = Rswift.ImageResource(bundle: R.hostingBundle, name: "graves")
     /// Image `info`.
     static let info = Rswift.ImageResource(bundle: R.hostingBundle, name: "info")
     /// Image `launchImage`.
     static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "launchImage")
+    /// Image `list`.
+    static let list = Rswift.ImageResource(bundle: R.hostingBundle, name: "list")
     /// Image `notFound`.
     static let notFound = Rswift.ImageResource(bundle: R.hostingBundle, name: "notFound")
     /// Image `search`.
@@ -108,11 +108,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.default568h, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "graves", bundle: ..., traitCollection: ...)`
-    static func graves(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.graves, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "info", bundle: ..., traitCollection: ...)`
     static func info(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.info, compatibleWith: traitCollection)
@@ -121,6 +116,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "launchImage", bundle: ..., traitCollection: ...)`
     static func launchImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.launchImage, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "list", bundle: ..., traitCollection: ...)`
+    static func list(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.list, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "notFound", bundle: ..., traitCollection: ...)`
@@ -195,11 +195,16 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UITabBarController
+      
       let bundle = R.hostingBundle
       let name = "Main"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "info", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'info' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "list", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'list' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "search", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'search' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

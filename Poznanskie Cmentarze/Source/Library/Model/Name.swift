@@ -19,14 +19,14 @@ struct Name {
 }
 
 extension Name {
-    /// for parsing surnameName
+    /// parsing surnameName
     init(surnameName: String) {
         var names = surnameName.components(separatedBy: " ")
         self.surname = names.removeFirst()
         self.firstName = names.joined(separator: " ")
     }
-    init(searchText: String) {
-        let components = searchText.split(separator: " ", maxSplits: 2).map(String.init)
+    init(with query: String) {
+        let components = query.split(separator: " ", maxSplits: 2).map(String.init)
         switch components.count {
         case 1:
             firstName = ""

@@ -22,19 +22,42 @@ struct GraveViewModel {
 
 extension GraveViewModel {
 
-    var nameAndSurname: String {
-        return ("\(grave.nameAndSurname.0.capitalized) \( grave.nameAndSurname.1.capitalized)")
+    var location: CLLocationCoordinate2D? {
+        let coordinates = grave.geometry.coordinates.locationCoordinate()
+        return coordinates
     }
 
-    private var tempDate: String {
-        return (grave.properties.dateDeath == Values.emptyData) ? grave.properties.dateBurial : grave.properties.dateDeath
+    var nameAndSurname: String {
+        guard [IdsForUniqueCemeteries.lubowska, IdsForUniqueCemeteries.samotna].contains(grave.properties.cmId) else {
+            let name = grave.properties.name.isEmpty ? "?" : grave.properties.name
+            return "\(name.capitalized) \(grave.properties.surname.capitalized)"
+        }
+        let localSurnameName = Name(surnameName: grave.properties.surnameName)
+        let firstName = localSurnameName.firstName
+        let surname = localSurnameName.surname
+        return ("\(firstName.capitalized) \(surname.capitalized)")
+    }
+
+    // sorting purposes
+    var deathOrBurialDate: Date {
+        if grave.properties.dateDeath.isValid() {
+            return grave.properties.dateDeath
+        } else {
+            return grave.properties.dateBurial
+        }
+    }
+
+    var deathOrBurialDateAsStringWithEmojis: String {
+        if grave.properties.dateDeath.isValid() {
+            return "✝️ \(DateFormatter.default.string(from: grave.properties.dateDeath))"
+        } else if grave.properties.dateBurial.isValid() {
+            return "⚰️ \(DateFormatter.default.string(from: grave.properties.dateBurial))"
+        } else { return "?" }
     }
 
     var years: String {
-        let birthDate = (grave.properties.dateBirth == Values.emptyData) ? "?" : grave.properties.dateBirth
-        let secondDate = (tempDate == Values.emptyData) ? "?" : tempDate
-
-        return ("\(birthDate) - \(secondDate)")
+        let birthDate = (grave.properties.dateBirth.isValid()) ? "✧ \(DateFormatter.default.string(from: grave.properties.dateBirth))" : "?"
+        return ("\(birthDate) - \(deathOrBurialDateAsStringWithEmojis)")
     }
 
     var fieldQuarterRowPlace: String {
@@ -47,10 +70,6 @@ extension GraveViewModel {
         return positionDetails.joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
-    var location: CLLocationCoordinate2D? {
-        return grave.location
-    }
-
     var cmName: String {
         return "Cmentarz \(cemeteryIdsWithNames[grave.properties.cmId] ?? "?")"
     }
@@ -58,18 +77,14 @@ extension GraveViewModel {
 
 extension GraveViewModel: Comparable {
 
-    private var dateToCompare: Date {
-        return tempDate.toDate()
-    }
-
     static func == (lhs: GraveViewModel, rhs: GraveViewModel) -> Bool {
-        return lhs.dateToCompare == rhs.dateToCompare
+        return lhs.deathOrBurialDate == rhs.deathOrBurialDate
     }
     static func < (lhs: GraveViewModel, rhs: GraveViewModel) -> Bool {
-        return lhs.dateToCompare < rhs.dateToCompare
+        return lhs.deathOrBurialDate < rhs.deathOrBurialDate
     }
     static func > (lhs: GraveViewModel, rhs: GraveViewModel) -> Bool {
-        return lhs.dateToCompare > rhs.dateToCompare
+        return lhs.deathOrBurialDate > rhs.deathOrBurialDate
     }
 }
 
@@ -87,8 +102,4 @@ extension GraveViewModel {
 
         return subtitleString
     }
-}
-
-private enum Values {
-    static let emptyData = "0001-01-01"
 }

@@ -12,13 +12,26 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let appFlowController = AppFlowController()
+    let cemeteryModel = CemeteryModel()
+    let searchModel = SearchModel()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = appFlowController
-        window?.makeKeyAndVisible()
-        appFlowController.start()
+
+        if let viewControllers = (window?.rootViewController as? UITabBarController)?.viewControllers {
+            for value in viewControllers.enumerated() {
+                switch value {
+                case let (0, navigatorController as UINavigationController):
+                    let cemeteryViewController = CemeteryViewController(cemeteryModel: cemeteryModel)
+                    navigatorController.setViewControllers([cemeteryViewController], animated: false)
+                case let (1, navigatorController as UINavigationController):
+                    let searchViewController = SearchViewController(searchModel: searchModel, cemeteryModel: cemeteryModel)
+                    searchModel.delegate = searchViewController
+                    cemeteryModel.delegate = searchViewController
+                    navigatorController.setViewControllers([searchViewController], animated: false)
+                default: continue
+                }
+            }
+        }
         return true
     }
 }

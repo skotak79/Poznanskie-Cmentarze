@@ -20,7 +20,7 @@ extension UIViewController {
     /// Show alert with error message
     func showErrorMessage(withError error: LoadingError) {
 
-        let alert = UIAlertController(title: "Błąd", message: error.makeErrorMessage(), preferredStyle: .alert)
+        let alert = UIAlertController(title: "Błąd", message: error.errorMessage(), preferredStyle: .alert)
         alert.addAction(title: "OK", style: .default, handler: nil)
         DispatchQueue.main.async {
             self.present(alert, animated: true)

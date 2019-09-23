@@ -35,5 +35,6 @@ extension NSLayoutConstraint {
             view.leftAnchor.constraint(equalTo: anotherView.safeAreaLayoutGuide.leftAnchor),
             view.rightAnchor.constraint(equalTo: anotherView.safeAreaLayoutGuide.rightAnchor),
             view.bottomAnchor.constraint(equalTo: anotherView.safeAreaLayoutGuide.bottomAnchor)
-            ])    }
+            ])
+    }
 }

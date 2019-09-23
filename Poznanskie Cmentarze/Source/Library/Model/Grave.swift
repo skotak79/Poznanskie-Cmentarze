@@ -18,7 +18,7 @@ struct Grave: Codable {
 
 struct Geometry: Codable {
     /// point, coordinate system WGS 84
-    let coordinates: [Double]
+    let coordinates: Coordinate
     let type: String
 }
 
@@ -26,34 +26,26 @@ struct Properties: Codable {
     // person's name
     let name: String
     // date of the burial
-    let dateBurial: String
-    /// not used
-    let cmNr: Int
+    let dateBurial: Date
     /// id of the cemetery
     let cmId: Int
     /// date of birth
-    let dateBirth: String
-    /// type of the grave
-    let gFamily: String
+    let dateBirth: Date
     /// date of death
-    let dateDeath: String
+    let dateDeath: Date
     /// field of the grave
     let field: String
-    /// number of people buried in the grave
-    let gSize: String
     /// quarter of the grave
     let quarter: String
     /// place of the grave
     let place: String
     /// row of the grave
     let row: String
-    /// person's name(s) and surname - use instead of g_surname i g_name for  Lubowska and Samotna cemeteries. Military rank for the Cemetery of Soviet Soldiers
+    /// person's name(s) and surname - use instead of g_surname i g_name for Lubowska and Samotna cemeteries. Military rank for the Cemetery of Soviet Soldiers
     let surnameName: String
     let printName: String
     /// person's surname
     let surname: String
-    /// is grave paid?
-    let paid: Int
     let printSurname: String
     let printSurnameName: String
     }
@@ -73,25 +65,16 @@ extension Grave {
         properties = try values.decode(Properties.self, forKey: .properties)
         type = try values.decode(String.self, forKey: .type)
     }
-
-    var location: CLLocationCoordinate2D? {
-        let coordinates = self.geometry.coordinates
-
-        return coordinates.isEmpty ? nil : CLLocationCoordinate2D(latitude: coordinates[1], longitude: coordinates[0])
-    }
-
-    var nameAndSurname: (String, String) {
-        guard self.properties.cmId == IdsForUniqueCemeteries.lubowska || self.properties.cmId == IdsForUniqueCemeteries.samotna else {
-            return (self.properties.name.isEmpty ? "?" : self.properties.name, self.properties.surname)
-        }
-        let localSurnameName = Name(surnameName: self.properties.surnameName)
-        let firstName = localSurnameName.firstName
-        let surname = localSurnameName.surname
-        return (firstName, surname)
-    }
 }
 
 extension Grave.Geometry {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        type = try values.decode(String.self, forKey: .type)
+        let coordinatesDouble = try values.decode([Double].self, forKey: .coordinates)
+        coordinates = Coordinate(latitude: coordinatesDouble[1], longitude: coordinatesDouble[0])
+    }
+
     enum CodingKeys: String, CodingKey {
         case coordinates
         case type
@@ -99,24 +82,55 @@ extension Grave.Geometry {
 }
 
 extension Grave.Properties {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        surname = try container.decode(String.self, forKey: .surname)
+        cmId = try container.decode(Int.self, forKey: .cmId)
+        field = try container.decode(String.self, forKey: .field)
+        quarter = try container.decode(String.self, forKey: .quarter)
+        place = try container.decode(String.self, forKey: .place)
+        row = try container.decode(String.self, forKey: .row)
+        surnameName = try container.decode(String.self, forKey: .surnameName)
+        printName = try container.decode(String.self, forKey: .printName)
+        printSurnameName = try container.decode(String.self, forKey: .printSurnameName)
+        printSurname = try container.decode(String.self, forKey: .printSurname)
+        dateBirth = try container.decode(DefaultDateWrapper.self, forKey: .dateBirth).value
+        dateDeath = try container.decode(DefaultDateWrapper.self, forKey: .dateDeath).value
+        dateBurial = try container.decode(DefaultDateWrapper.self, forKey: .dateBurial).value
+    }
+
     enum CodingKeys: String, CodingKey {
         case name = "g_name"
         case dateBurial = "g_date_burial"
-        case cmNr = "cm_nr"
         case cmId = "cm_id"
         case dateBirth = "g_date_birth"
-        case gFamily = "g_family"
         case dateDeath = "g_date_death"
         case field = "g_field"
-        case gSize = "g_size"
         case quarter = "g_quarter"
         case place = "g_place"
         case row = "g_row"
         case surnameName = "g_surname_name"
         case printName = "print_name"
         case surname = "g_surname"
-        case paid
         case printSurname = "print_surname"
         case printSurnameName = "print_surname_name"
+    }
+}
+
+func valueNotFound<T>(codingPath: [CodingKey], debugDescription: String) throws -> T {
+    let context = DecodingError.Context(codingPath: codingPath, debugDescription: debugDescription)
+    throw DecodingError.valueNotFound(T.self, context)
+}
+
+struct DefaultDateWrapper {
+    let value: Date
+}
+
+extension DefaultDateWrapper: Swift.Decodable {
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        self.value = try DateFormatter.default.date(from: container.decode(String.self))
+            ?? valueNotFound(codingPath: [], debugDescription: "can not convert to Date")
     }
 }

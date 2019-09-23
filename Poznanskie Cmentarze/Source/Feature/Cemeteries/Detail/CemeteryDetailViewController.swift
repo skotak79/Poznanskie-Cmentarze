@@ -10,10 +10,9 @@ import UIKit
 import MapKit
 
 /// Show detailed information of the cemetery
-final class CemeteryDetailViewController: BaseController<DetailView>, DetailViewController {
+final class CemeteryDetailViewController: BaseController<DetailView>, DetailViewControllerType {
     
     private let cemetery: Cemetery
-    var openMaps: ((CLLocationCoordinate2D, String) -> Void)?
     
     // MARK: - Init
 
@@ -21,6 +20,7 @@ final class CemeteryDetailViewController: BaseController<DetailView>, DetailView
         self.cemetery = cemetery
         super.init(nibName: nil, bundle: nil)
         self.title = cemetery.properties.name
+        self.hidesBottomBarWhenPushed = true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -61,6 +61,6 @@ final class CemeteryDetailViewController: BaseController<DetailView>, DetailView
     }
 
     @objc private func openMapsButtonTouched() {
-        openMaps?(Helper.getGeoCenterLocation(of: cemetery), "Cmentarz \(cemetery.properties.name)")
+        navigationController?.displayMapsWarning(coordinates: Helper.getGeoCenterLocation(of: cemetery), description: "Cmentarz \(cemetery.properties.name)")
     }
 }

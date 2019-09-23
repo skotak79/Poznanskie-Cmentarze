@@ -45,8 +45,10 @@ class GraveTests: XCTestCase {
         let data = try JSONSerialization.data(withJSONObject: json, options: [])
         let decoder = JSONDecoder()
         let grave = try decoder.decode(Grave.self, from: data)
-            XCTAssertEqual(grave.id, 348682335)
-            XCTAssertEqual(grave.coordinates[0], 16.784709048958401)
-            XCTAssertEqual(grave.dateDeath, "1996-06-11")
+        XCTAssertEqual(grave.id, 348682335)
+        XCTAssertEqual(grave.properties.cmId, 23)
+        XCTAssertEqual(grave.properties.field, "")
+        XCTAssertEqual(grave.properties.surname, "czerwińska")
+        XCTAssertEqual(grave.geometry.coordinates.longitude, 16.784709048958401)
     }
 }

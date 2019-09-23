@@ -14,8 +14,8 @@ final class Helper {
     /// Calculate geo center of the cemetery
     static func getGeoCenterLocation(of cemetery: Cemetery) -> CLLocationCoordinate2D {
         var mapPoints = [MKMapPoint]()
-        mapPoints = cemetery.coordinates
-            .map {MKMapPoint($0)}
+        mapPoints = cemetery.geometry.coordinates
+            .map {MKMapPoint($0.locationCoordinate())}
         let polygon = MKPolygon(points: mapPoints, count: mapPoints.count)
         return polygon.coordinate
     }

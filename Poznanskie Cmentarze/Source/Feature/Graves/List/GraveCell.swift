@@ -15,12 +15,13 @@ final class GraveCell: UITableViewCell {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         setup()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
 
     // MARK: - Setup
-    
+
     private func setup() {
         self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         backgroundColor = UIColor.white

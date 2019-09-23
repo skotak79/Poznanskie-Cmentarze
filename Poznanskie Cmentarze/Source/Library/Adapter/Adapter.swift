@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// not used
 /// A generic adapter to act as a convenient Datasource and Delegate for UITableView
 final class Adapter<T, Cell: UITableViewCell>: NSObject, UITableViewDataSource, UITableViewDelegate {
     var items: [T] = []

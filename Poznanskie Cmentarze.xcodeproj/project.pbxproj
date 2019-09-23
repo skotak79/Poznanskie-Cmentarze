@@ -10,7 +10,6 @@
 		01050EAA2261DFCE004404B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01050EA82261DFCE004404B6 /* Main.storyboard */; };
 		01050EAC2261DFD2004404B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01050EAB2261DFD2004404B6 /* Assets.xcassets */; };
 		01050EAF2261DFD2004404B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01050EAD2261DFD2004404B6 /* LaunchScreen.storyboard */; };
-		01050EBA2261DFD3004404B6 /* Poznanskie_CmentarzeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EB92261DFD3004404B6 /* Poznanskie_CmentarzeTests.swift */; };
 		01050EC52261DFD3004404B6 /* Poznanskie_CmentarzeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EC42261DFD3004404B6 /* Poznanskie_CmentarzeUITests.swift */; };
 		01050EDE2261F52A004404B6 /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01050ED72261F52A004404B6 /* PlayfairDisplay-Bold.ttf */; };
 		01050EDF2261F52A004404B6 /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01050ED82261F52A004404B6 /* PlayfairDisplay-Regular.ttf */; };
@@ -20,8 +19,6 @@
 		01050EE32261F52A004404B6 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01050EDD2261F52A004404B6 /* OpenSans-Regular.ttf */; };
 		01050F282261F7EB004404B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EE72261F7EB004404B6 /* AppDelegate.swift */; };
 		01050F292261F7EB004404B6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EE82261F7EB004404B6 /* Color.swift */; };
-		01050F2A2261F7EB004404B6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EEA2261F7EB004404B6 /* Networking.swift */; };
-		01050F2B2261F7EB004404B6 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EEB2261F7EB004404B6 /* Resource.swift */; };
 		01050F2C2261F7EB004404B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EED2261F7EB004404B6 /* Constants.swift */; };
 		01050F2D2261F7EB004404B6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EEF2261F7EB004404B6 /* Helper.swift */; };
 		01050F2E2261F7EB004404B6 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EF02261F7EB004404B6 /* Debouncer.swift */; };
@@ -29,7 +26,6 @@
 		01050F302261F7EB004404B6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EF42261F7EB004404B6 /* UIViewController+Extensions.swift */; };
 		01050F312261F7EB004404B6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EF52261F7EB004404B6 /* UIView+Extensions.swift */; };
 		01050F322261F7EB004404B6 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EF62261F7EB004404B6 /* UIFont+Extensions.swift */; };
-		01050F332261F7EB004404B6 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EF72261F7EB004404B6 /* UIColor+Extensions.swift */; };
 		01050F342261F7EB004404B6 /* UINavigationController+openMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EF82261F7EB004404B6 /* UINavigationController+openMaps.swift */; };
 		01050F352261F7EB004404B6 /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EF92261F7EB004404B6 /* NSLayoutConstraint+Extensions.swift */; };
 		01050F362261F7EB004404B6 /* UIAlertController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EFA2261F7EB004404B6 /* UIAlertController+Action.swift */; };
@@ -38,45 +34,43 @@
 		01050F392261F7EB004404B6 /* Grave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EFE2261F7EB004404B6 /* Grave.swift */; };
 		01050F3A2261F7EB004404B6 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050EFF2261F7EB004404B6 /* Name.swift */; };
 		01050F3B2261F7EB004404B6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F012261F7EB004404B6 /* EmptyView.swift */; };
-		01050F3D2261F7EB004404B6 /* ScrollableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F032261F7EB004404B6 /* ScrollableView.swift */; };
-		01050F3E2261F7EB004404B6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F052261F7EB004404B6 /* NetworkService.swift */; };
-		01050F3F2261F7EB004404B6 /* GravesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F062261F7EB004404B6 /* GravesService.swift */; };
-		01050F402261F7EB004404B6 /* CemeteriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F072261F7EB004404B6 /* CemeteriesService.swift */; };
 		01050F412261F7EB004404B6 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F092261F7EB004404B6 /* BaseController.swift */; };
-		01050F422261F7EB004404B6 /* TabBarFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F0B2261F7EB004404B6 /* TabBarFlowController.swift */; };
-		01050F432261F7EB004404B6 /* CemeteryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F0C2261F7EB004404B6 /* CemeteryFlowController.swift */; };
-		01050F442261F7EB004404B6 /* GraveFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F0D2261F7EB004404B6 /* GraveFlowController.swift */; };
-		01050F452261F7EB004404B6 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F0E2261F7EB004404B6 /* AppFlowController.swift */; };
-		01050F462261F7EB004404B6 /* GraveHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F122261F7EB004404B6 /* GraveHomeViewController.swift */; };
-		01050F472261F7EB004404B6 /* SearchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F142261F7EB004404B6 /* SearchComponent.swift */; };
 		01050F492261F7EB004404B6 /* GraveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F172261F7EB004404B6 /* GraveDetailViewController.swift */; };
-		01050F4A2261F7EB004404B6 /* GraveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F192261F7EB004404B6 /* GraveListViewController.swift */; };
 		01050F4B2261F7EB004404B6 /* GraveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F1A2261F7EB004404B6 /* GraveCell.swift */; };
-		01050F4C2261F7EB004404B6 /* CemeteryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F1D2261F7EB004404B6 /* CemeteryHomeViewController.swift */; };
 		01050F4E2261F7EB004404B6 /* CemeteryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F202261F7EB004404B6 /* CemeteryDetailViewController.swift */; };
 		01050F4F2261F7EB004404B6 /* CemeteryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F222261F7EB004404B6 /* CemeteryCell.swift */; };
-		01050F512261F7EB004404B6 /* CemeteryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F242261F7EB004404B6 /* CemeteryListViewController.swift */; };
-		01050F522261F7EB004404B6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F262261F7EB004404B6 /* AboutView.swift */; };
-		01050F532261F7EB004404B6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F272261F7EB004404B6 /* AboutViewController.swift */; };
 		01050F562261F92A004404B6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01050F552261F92A004404B6 /* Default-568h@2x.png */; };
 		01050F682262030C004404B6 /* DebouncerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F592262030B004404B6 /* DebouncerTests.swift */; };
 		01050F692262030C004404B6 /* GraveViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F5B2262030B004404B6 /* GraveViewModelTests.swift */; };
 		01050F6A2262030C004404B6 /* GraveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F5C2262030B004404B6 /* GraveTests.swift */; };
 		01050F6B2262030C004404B6 /* CemeteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F5D2262030B004404B6 /* CemeteryTests.swift */; };
-		01050F6C2262030C004404B6 /* CemeteriesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F5F2262030B004404B6 /* CemeteriesServiceTests.swift */; };
-		01050F6D2262030C004404B6 /* GravesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F602262030B004404B6 /* GravesServiceTests.swift */; };
 		01050F6E2262030C004404B6 /* graves.json in Resources */ = {isa = PBXBuildFile; fileRef = 01050F622262030C004404B6 /* graves.json */; };
 		01050F6F2262030C004404B6 /* singleGrave.json in Resources */ = {isa = PBXBuildFile; fileRef = 01050F632262030C004404B6 /* singleGrave.json */; };
 		01050F702262030C004404B6 /* cemeteries.json in Resources */ = {isa = PBXBuildFile; fileRef = 01050F642262030C004404B6 /* cemeteries.json */; };
 		01050F712262030C004404B6 /* singleCemetery.json in Resources */ = {isa = PBXBuildFile; fileRef = 01050F652262030C004404B6 /* singleCemetery.json */; };
-		01050F722262030C004404B6 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01050F672262030C004404B6 /* MockNetworkService.swift */; };
+		011656A42328E96C008A15AC /* CemeteryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011656A32328E96C008A15AC /* CemeteryModel.swift */; };
+		011656A62328F0BA008A15AC /* ApiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011656A52328F0BA008A15AC /* ApiSession.swift */; };
+		011656A8232906A1008A15AC /* CemeteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011656A7232906A1008A15AC /* CemeteryViewController.swift */; };
+		011656AA23293689008A15AC /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011656A923293689008A15AC /* SearchModel.swift */; };
 		015EA023231567E700095C1C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA022231567E700095C1C /* DetailView.swift */; };
 		015EA02523158CA700095C1C /* ClosureSleeve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA02423158CA700095C1C /* ClosureSleeve.swift */; };
 		015EA02723158CE500095C1C /* UIControl+addAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA02623158CE500095C1C /* UIControl+addAction.swift */; };
-		015EA02923158D4A00095C1C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA02823158D4A00095C1C /* DetailViewController.swift */; };
+		015EA02923158D4A00095C1C /* DetailViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA02823158D4A00095C1C /* DetailViewControllerType.swift */; };
+		01626225232F972200BC7BCC /* DateFormatter+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01626224232F972200BC7BCC /* DateFormatter+extensions.swift */; };
 		016506712321613F003F63FB /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016506702321613F003F63FB /* String+Extensions.swift */; };
+		017B69A12330FFDD00A82323 /* MockNetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017B69A02330FFDD00A82323 /* MockNetworkEngine.swift */; };
 		01BA647E2319358300C9AB0E /* GraveCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BA647D2319358300C9AB0E /* GraveCollection.swift */; };
 		01D838A32264F4D0006802B3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D838A22264F4D0006802B3 /* R.generated.swift */; };
+		01D96769232973D7008DC99C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D96768232973D7008DC99C /* SearchViewController.swift */; };
+		01DA8485232CF7A900BEEAEC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA8484232CF7A900BEEAEC /* Request.swift */; };
+		01DA8487232CF9BB00BEEAEC /* CemeteryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA8486232CF9BB00BEEAEC /* CemeteryRequest.swift */; };
+		01DA8489232CFA8A00BEEAEC /* GraveRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA8488232CFA8A00BEEAEC /* GraveRequest.swift */; };
+		01DA848B232D0A4D00BEEAEC /* GraveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA848A232D0A4D00BEEAEC /* GraveListViewController.swift */; };
+		01DD6478232FE7B5005ECA74 /* Date+isValid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DD6477232FE7B5005ECA74 /* Date+isValid.swift */; };
+		01E20B96233672C1005EAA43 /* CemeteryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E20B95233672C1005EAA43 /* CemeteryModelTests.swift */; };
+		01E20B9823367400005EAA43 /* SearchModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E20B9723367400005EAA43 /* SearchModelTests.swift */; };
+		01E20B9A2336750F005EAA43 /* DelegateSpies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E20B992336750F005EAA43 /* DelegateSpies.swift */; };
+		01F01D252332228E00B81B05 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F01D242332228E00B81B05 /* Coordinate.swift */; };
 		C18FCBC9AECD883EEC504AA7 /* Pods_Poznanskie_CmentarzeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A729B042A410E77DE0E1E3A9 /* Pods_Poznanskie_CmentarzeUITests.framework */; };
 		C787C1CAC25F87EF8BE88493 /* Pods_Poznanskie_CmentarzeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C54266032B6628F69B1256 /* Pods_Poznanskie_CmentarzeTests.framework */; };
 		E68AF4CD323BDE176573BC91 /* Pods_Poznanskie_Cmentarze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D396D111B4D400C8D5D861 /* Pods_Poznanskie_Cmentarze.framework */; };
@@ -106,7 +100,6 @@
 		01050EAE2261DFD2004404B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01050EB02261DFD2004404B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01050EB52261DFD3004404B6 /* Poznanskie CmentarzeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Poznanskie CmentarzeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		01050EB92261DFD3004404B6 /* Poznanskie_CmentarzeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poznanskie_CmentarzeTests.swift; sourceTree = "<group>"; };
 		01050EBB2261DFD3004404B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01050EC02261DFD3004404B6 /* Poznanskie CmentarzeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Poznanskie CmentarzeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01050EC42261DFD3004404B6 /* Poznanskie_CmentarzeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poznanskie_CmentarzeUITests.swift; sourceTree = "<group>"; };
@@ -119,8 +112,6 @@
 		01050EDD2261F52A004404B6 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		01050EE72261F7EB004404B6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01050EE82261F7EB004404B6 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		01050EEA2261F7EB004404B6 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		01050EEB2261F7EB004404B6 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		01050EED2261F7EB004404B6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		01050EEF2261F7EB004404B6 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		01050EF02261F7EB004404B6 /* Debouncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
@@ -128,7 +119,6 @@
 		01050EF42261F7EB004404B6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		01050EF52261F7EB004404B6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		01050EF62261F7EB004404B6 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
-		01050EF72261F7EB004404B6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		01050EF82261F7EB004404B6 /* UINavigationController+openMaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+openMaps.swift"; sourceTree = "<group>"; };
 		01050EF92261F7EB004404B6 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		01050EFA2261F7EB004404B6 /* UIAlertController+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Action.swift"; sourceTree = "<group>"; };
@@ -137,45 +127,43 @@
 		01050EFE2261F7EB004404B6 /* Grave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grave.swift; sourceTree = "<group>"; };
 		01050EFF2261F7EB004404B6 /* Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		01050F012261F7EB004404B6 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		01050F032261F7EB004404B6 /* ScrollableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableView.swift; sourceTree = "<group>"; };
-		01050F052261F7EB004404B6 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		01050F062261F7EB004404B6 /* GravesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravesService.swift; sourceTree = "<group>"; };
-		01050F072261F7EB004404B6 /* CemeteriesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CemeteriesService.swift; sourceTree = "<group>"; };
 		01050F092261F7EB004404B6 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
-		01050F0B2261F7EB004404B6 /* TabBarFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarFlowController.swift; sourceTree = "<group>"; };
-		01050F0C2261F7EB004404B6 /* CemeteryFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CemeteryFlowController.swift; sourceTree = "<group>"; };
-		01050F0D2261F7EB004404B6 /* GraveFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraveFlowController.swift; sourceTree = "<group>"; };
-		01050F0E2261F7EB004404B6 /* AppFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
-		01050F122261F7EB004404B6 /* GraveHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraveHomeViewController.swift; sourceTree = "<group>"; };
-		01050F142261F7EB004404B6 /* SearchComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchComponent.swift; sourceTree = "<group>"; };
 		01050F172261F7EB004404B6 /* GraveDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraveDetailViewController.swift; sourceTree = "<group>"; };
-		01050F192261F7EB004404B6 /* GraveListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraveListViewController.swift; sourceTree = "<group>"; };
 		01050F1A2261F7EB004404B6 /* GraveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraveCell.swift; sourceTree = "<group>"; };
-		01050F1D2261F7EB004404B6 /* CemeteryHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CemeteryHomeViewController.swift; sourceTree = "<group>"; };
 		01050F202261F7EB004404B6 /* CemeteryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CemeteryDetailViewController.swift; sourceTree = "<group>"; };
 		01050F222261F7EB004404B6 /* CemeteryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CemeteryCell.swift; sourceTree = "<group>"; };
-		01050F242261F7EB004404B6 /* CemeteryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CemeteryListViewController.swift; sourceTree = "<group>"; };
-		01050F262261F7EB004404B6 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		01050F272261F7EB004404B6 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		01050F552261F92A004404B6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01050F592262030B004404B6 /* DebouncerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebouncerTests.swift; sourceTree = "<group>"; };
 		01050F5B2262030B004404B6 /* GraveViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraveViewModelTests.swift; sourceTree = "<group>"; };
 		01050F5C2262030B004404B6 /* GraveTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraveTests.swift; sourceTree = "<group>"; };
 		01050F5D2262030B004404B6 /* CemeteryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CemeteryTests.swift; sourceTree = "<group>"; };
-		01050F5F2262030B004404B6 /* CemeteriesServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CemeteriesServiceTests.swift; sourceTree = "<group>"; };
-		01050F602262030B004404B6 /* GravesServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravesServiceTests.swift; sourceTree = "<group>"; };
 		01050F622262030C004404B6 /* graves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = graves.json; sourceTree = "<group>"; };
 		01050F632262030C004404B6 /* singleGrave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = singleGrave.json; sourceTree = "<group>"; };
 		01050F642262030C004404B6 /* cemeteries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cemeteries.json; sourceTree = "<group>"; };
 		01050F652262030C004404B6 /* singleCemetery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = singleCemetery.json; sourceTree = "<group>"; };
-		01050F672262030C004404B6 /* MockNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		011656A32328E96C008A15AC /* CemeteryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CemeteryModel.swift; sourceTree = "<group>"; };
+		011656A52328F0BA008A15AC /* ApiSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSession.swift; sourceTree = "<group>"; };
+		011656A7232906A1008A15AC /* CemeteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CemeteryViewController.swift; sourceTree = "<group>"; };
+		011656A923293689008A15AC /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		015EA022231567E700095C1C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		015EA02423158CA700095C1C /* ClosureSleeve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureSleeve.swift; sourceTree = "<group>"; };
 		015EA02623158CE500095C1C /* UIControl+addAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+addAction.swift"; sourceTree = "<group>"; };
-		015EA02823158D4A00095C1C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		015EA02823158D4A00095C1C /* DetailViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerType.swift; sourceTree = "<group>"; };
+		01626224232F972200BC7BCC /* DateFormatter+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+extensions.swift"; sourceTree = "<group>"; };
 		016506702321613F003F63FB /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		017B69A02330FFDD00A82323 /* MockNetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkEngine.swift; sourceTree = "<group>"; };
 		01BA647D2319358300C9AB0E /* GraveCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveCollection.swift; sourceTree = "<group>"; };
 		01D838A22264F4D0006802B3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		01D96768232973D7008DC99C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		01DA8484232CF7A900BEEAEC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		01DA8486232CF9BB00BEEAEC /* CemeteryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CemeteryRequest.swift; sourceTree = "<group>"; };
+		01DA8488232CFA8A00BEEAEC /* GraveRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveRequest.swift; sourceTree = "<group>"; };
+		01DA848A232D0A4D00BEEAEC /* GraveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveListViewController.swift; sourceTree = "<group>"; };
+		01DD6477232FE7B5005ECA74 /* Date+isValid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+isValid.swift"; sourceTree = "<group>"; };
+		01E20B95233672C1005EAA43 /* CemeteryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CemeteryModelTests.swift; sourceTree = "<group>"; };
+		01E20B9723367400005EAA43 /* SearchModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelTests.swift; sourceTree = "<group>"; };
+		01E20B992336750F005EAA43 /* DelegateSpies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateSpies.swift; sourceTree = "<group>"; };
+		01F01D242332228E00B81B05 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		0299287C5C0A71CC68354BB9 /* Pods-Poznanskie Cmentarze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poznanskie Cmentarze.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poznanskie Cmentarze/Pods-Poznanskie Cmentarze.debug.xcconfig"; sourceTree = "<group>"; };
 		09346403EFE5CD9BE474937F /* Pods-Poznanskie CmentarzeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poznanskie CmentarzeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poznanskie CmentarzeTests/Pods-Poznanskie CmentarzeTests.release.xcconfig"; sourceTree = "<group>"; };
 		24F84C213EB72C7571D2264F /* Pods-Poznanskie CmentarzeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poznanskie CmentarzeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poznanskie CmentarzeUITests/Pods-Poznanskie CmentarzeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -253,7 +241,6 @@
 				01050F612262030C004404B6 /* Fixture */,
 				01050F572262030B004404B6 /* Library */,
 				01050F662262030C004404B6 /* Mock */,
-				01050EB92261DFD3004404B6 /* Poznanskie_CmentarzeTests.swift */,
 				01050EBB2261DFD3004404B6 /* Info.plist */,
 			);
 			path = "Poznanskie CmentarzeTests";
@@ -330,9 +317,7 @@
 				01050EF32261F7EB004404B6 /* Extensions */,
 				01050EFB2261F7EB004404B6 /* Model */,
 				01050F002261F7EB004404B6 /* View */,
-				01050F042261F7EB004404B6 /* Service */,
 				01050F082261F7EB004404B6 /* Base */,
-				01050F0A2261F7EB004404B6 /* Flow */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -349,8 +334,10 @@
 		01050EE92261F7EB004404B6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				01050EEA2261F7EB004404B6 /* Networking.swift */,
-				01050EEB2261F7EB004404B6 /* Resource.swift */,
+				01DA8484232CF7A900BEEAEC /* Request.swift */,
+				01DA8486232CF9BB00BEEAEC /* CemeteryRequest.swift */,
+				01DA8488232CFA8A00BEEAEC /* GraveRequest.swift */,
+				011656A52328F0BA008A15AC /* ApiSession.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -387,14 +374,15 @@
 			children = (
 				01050EF42261F7EB004404B6 /* UIViewController+Extensions.swift */,
 				016506702321613F003F63FB /* String+Extensions.swift */,
+				01DD6477232FE7B5005ECA74 /* Date+isValid.swift */,
+				01626224232F972200BC7BCC /* DateFormatter+extensions.swift */,
 				01050EF52261F7EB004404B6 /* UIView+Extensions.swift */,
 				01050EF62261F7EB004404B6 /* UIFont+Extensions.swift */,
-				01050EF72261F7EB004404B6 /* UIColor+Extensions.swift */,
 				01050EF82261F7EB004404B6 /* UINavigationController+openMaps.swift */,
 				01050EF92261F7EB004404B6 /* NSLayoutConstraint+Extensions.swift */,
 				01050EFA2261F7EB004404B6 /* UIAlertController+Action.swift */,
 				015EA02623158CE500095C1C /* UIControl+addAction.swift */,
-				015EA02823158D4A00095C1C /* DetailViewController.swift */,
+				015EA02823158D4A00095C1C /* DetailViewControllerType.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -405,8 +393,11 @@
 				01050EFC2261F7EB004404B6 /* GraveViewModel.swift */,
 				01BA647D2319358300C9AB0E /* GraveCollection.swift */,
 				01050EFD2261F7EB004404B6 /* Cemetery.swift */,
+				01F01D242332228E00B81B05 /* Coordinate.swift */,
 				01050EFE2261F7EB004404B6 /* Grave.swift */,
 				01050EFF2261F7EB004404B6 /* Name.swift */,
+				011656A32328E96C008A15AC /* CemeteryModel.swift */,
+				011656A923293689008A15AC /* SearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -415,20 +406,9 @@
 			isa = PBXGroup;
 			children = (
 				01050F012261F7EB004404B6 /* EmptyView.swift */,
-				01050F032261F7EB004404B6 /* ScrollableView.swift */,
 				015EA022231567E700095C1C /* DetailView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		01050F042261F7EB004404B6 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				01050F052261F7EB004404B6 /* NetworkService.swift */,
-				01050F062261F7EB004404B6 /* GravesService.swift */,
-				01050F072261F7EB004404B6 /* CemeteriesService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		01050F082261F7EB004404B6 /* Base */ = {
@@ -439,23 +419,11 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		01050F0A2261F7EB004404B6 /* Flow */ = {
-			isa = PBXGroup;
-			children = (
-				01050F0B2261F7EB004404B6 /* TabBarFlowController.swift */,
-				01050F0C2261F7EB004404B6 /* CemeteryFlowController.swift */,
-				01050F0D2261F7EB004404B6 /* GraveFlowController.swift */,
-				01050F0E2261F7EB004404B6 /* AppFlowController.swift */,
-			);
-			path = Flow;
-			sourceTree = "<group>";
-		};
 		01050F0F2261F7EB004404B6 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
 				01050F102261F7EB004404B6 /* Graves */,
 				01050F1B2261F7EB004404B6 /* Cemeteries */,
-				01050F252261F7EB004404B6 /* About */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -463,28 +431,11 @@
 		01050F102261F7EB004404B6 /* Graves */ = {
 			isa = PBXGroup;
 			children = (
-				01050F112261F7EB004404B6 /* Home */,
-				01050F132261F7EB004404B6 /* Search */,
 				01050F152261F7EB004404B6 /* Detail */,
 				01050F182261F7EB004404B6 /* List */,
+				01D96768232973D7008DC99C /* SearchViewController.swift */,
 			);
 			path = Graves;
-			sourceTree = "<group>";
-		};
-		01050F112261F7EB004404B6 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				01050F122261F7EB004404B6 /* GraveHomeViewController.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		01050F132261F7EB004404B6 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				01050F142261F7EB004404B6 /* SearchComponent.swift */,
-			);
-			path = Search;
 			sourceTree = "<group>";
 		};
 		01050F152261F7EB004404B6 /* Detail */ = {
@@ -498,7 +449,7 @@
 		01050F182261F7EB004404B6 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				01050F192261F7EB004404B6 /* GraveListViewController.swift */,
+				01DA848A232D0A4D00BEEAEC /* GraveListViewController.swift */,
 				01050F1A2261F7EB004404B6 /* GraveCell.swift */,
 			);
 			path = List;
@@ -507,19 +458,11 @@
 		01050F1B2261F7EB004404B6 /* Cemeteries */ = {
 			isa = PBXGroup;
 			children = (
-				01050F1C2261F7EB004404B6 /* Home */,
 				01050F1E2261F7EB004404B6 /* Detail */,
-				01050F212261F7EB004404B6 /* List */,
+				011656A7232906A1008A15AC /* CemeteryViewController.swift */,
+				01050F222261F7EB004404B6 /* CemeteryCell.swift */,
 			);
 			path = Cemeteries;
-			sourceTree = "<group>";
-		};
-		01050F1C2261F7EB004404B6 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				01050F1D2261F7EB004404B6 /* CemeteryHomeViewController.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		01050F1E2261F7EB004404B6 /* Detail */ = {
@@ -530,30 +473,11 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		01050F212261F7EB004404B6 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				01050F222261F7EB004404B6 /* CemeteryCell.swift */,
-				01050F242261F7EB004404B6 /* CemeteryListViewController.swift */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
-		01050F252261F7EB004404B6 /* About */ = {
-			isa = PBXGroup;
-			children = (
-				01050F262261F7EB004404B6 /* AboutView.swift */,
-				01050F272261F7EB004404B6 /* AboutViewController.swift */,
-			);
-			path = About;
-			sourceTree = "<group>";
-		};
 		01050F572262030B004404B6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
 				01050F582262030B004404B6 /* Utils */,
 				01050F5A2262030B004404B6 /* Model */,
-				01050F5E2262030B004404B6 /* Service */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -572,17 +496,10 @@
 				01050F5B2262030B004404B6 /* GraveViewModelTests.swift */,
 				01050F5C2262030B004404B6 /* GraveTests.swift */,
 				01050F5D2262030B004404B6 /* CemeteryTests.swift */,
+				01E20B9723367400005EAA43 /* SearchModelTests.swift */,
+				01E20B95233672C1005EAA43 /* CemeteryModelTests.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		01050F5E2262030B004404B6 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				01050F5F2262030B004404B6 /* CemeteriesServiceTests.swift */,
-				01050F602262030B004404B6 /* GravesServiceTests.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		01050F612262030C004404B6 /* Fixture */ = {
@@ -599,7 +516,8 @@
 		01050F662262030C004404B6 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				01050F672262030C004404B6 /* MockNetworkService.swift */,
+				017B69A02330FFDD00A82323 /* MockNetworkEngine.swift */,
+				01E20B992336750F005EAA43 /* DelegateSpies.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -905,52 +823,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				01050F372261F7EB004404B6 /* GraveViewModel.swift in Sources */,
-				01050F432261F7EB004404B6 /* CemeteryFlowController.swift in Sources */,
-				01050F532261F7EB004404B6 /* AboutViewController.swift in Sources */,
+				01DA8485232CF7A900BEEAEC /* Request.swift in Sources */,
 				01050F2C2261F7EB004404B6 /* Constants.swift in Sources */,
 				01050F4E2261F7EB004404B6 /* CemeteryDetailViewController.swift in Sources */,
-				01050F3E2261F7EB004404B6 /* NetworkService.swift in Sources */,
 				01050F352261F7EB004404B6 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				015EA02523158CA700095C1C /* ClosureSleeve.swift in Sources */,
 				01050F322261F7EB004404B6 /* UIFont+Extensions.swift in Sources */,
 				01050F2F2261F7EB004404B6 /* Adapter.swift in Sources */,
-				01050F442261F7EB004404B6 /* GraveFlowController.swift in Sources */,
 				01050F362261F7EB004404B6 /* UIAlertController+Action.swift in Sources */,
 				01050F312261F7EB004404B6 /* UIView+Extensions.swift in Sources */,
+				011656A42328E96C008A15AC /* CemeteryModel.swift in Sources */,
 				01050F3A2261F7EB004404B6 /* Name.swift in Sources */,
 				01050F342261F7EB004404B6 /* UINavigationController+openMaps.swift in Sources */,
-				01050F2A2261F7EB004404B6 /* Networking.swift in Sources */,
 				01050F2E2261F7EB004404B6 /* Debouncer.swift in Sources */,
 				01BA647E2319358300C9AB0E /* GraveCollection.swift in Sources */,
-				01050F452261F7EB004404B6 /* AppFlowController.swift in Sources */,
 				01050F302261F7EB004404B6 /* UIViewController+Extensions.swift in Sources */,
 				01050F4F2261F7EB004404B6 /* CemeteryCell.swift in Sources */,
 				01050F382261F7EB004404B6 /* Cemetery.swift in Sources */,
-				01050F4C2261F7EB004404B6 /* CemeteryHomeViewController.swift in Sources */,
-				01050F4A2261F7EB004404B6 /* GraveListViewController.swift in Sources */,
-				01050F3F2261F7EB004404B6 /* GravesService.swift in Sources */,
-				015EA02923158D4A00095C1C /* DetailViewController.swift in Sources */,
-				01050F422261F7EB004404B6 /* TabBarFlowController.swift in Sources */,
+				01DD6478232FE7B5005ECA74 /* Date+isValid.swift in Sources */,
+				011656A62328F0BA008A15AC /* ApiSession.swift in Sources */,
+				011656AA23293689008A15AC /* SearchModel.swift in Sources */,
+				015EA02923158D4A00095C1C /* DetailViewControllerType.swift in Sources */,
+				01626225232F972200BC7BCC /* DateFormatter+extensions.swift in Sources */,
 				01050F412261F7EB004404B6 /* BaseController.swift in Sources */,
 				015EA023231567E700095C1C /* DetailView.swift in Sources */,
-				01050F332261F7EB004404B6 /* UIColor+Extensions.swift in Sources */,
-				01050F2B2261F7EB004404B6 /* Resource.swift in Sources */,
-				01050F512261F7EB004404B6 /* CemeteryListViewController.swift in Sources */,
+				01D96769232973D7008DC99C /* SearchViewController.swift in Sources */,
 				016506712321613F003F63FB /* String+Extensions.swift in Sources */,
 				01D838A32264F4D0006802B3 /* R.generated.swift in Sources */,
+				01DA8489232CFA8A00BEEAEC /* GraveRequest.swift in Sources */,
+				01DA848B232D0A4D00BEEAEC /* GraveListViewController.swift in Sources */,
+				011656A8232906A1008A15AC /* CemeteryViewController.swift in Sources */,
 				01050F282261F7EB004404B6 /* AppDelegate.swift in Sources */,
 				01050F3B2261F7EB004404B6 /* EmptyView.swift in Sources */,
-				01050F472261F7EB004404B6 /* SearchComponent.swift in Sources */,
-				01050F402261F7EB004404B6 /* CemeteriesService.swift in Sources */,
 				01050F292261F7EB004404B6 /* Color.swift in Sources */,
 				01050F492261F7EB004404B6 /* GraveDetailViewController.swift in Sources */,
-				01050F522261F7EB004404B6 /* AboutView.swift in Sources */,
+				01DA8487232CF9BB00BEEAEC /* CemeteryRequest.swift in Sources */,
 				01050F2D2261F7EB004404B6 /* Helper.swift in Sources */,
 				01050F392261F7EB004404B6 /* Grave.swift in Sources */,
 				015EA02723158CE500095C1C /* UIControl+addAction.swift in Sources */,
-				01050F462261F7EB004404B6 /* GraveHomeViewController.swift in Sources */,
-				01050F3D2261F7EB004404B6 /* ScrollableView.swift in Sources */,
 				01050F4B2261F7EB004404B6 /* GraveCell.swift in Sources */,
+				01F01D252332228E00B81B05 /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,13 +870,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01050F722262030C004404B6 /* MockNetworkService.swift in Sources */,
-				01050EBA2261DFD3004404B6 /* Poznanskie_CmentarzeTests.swift in Sources */,
 				01050F692262030C004404B6 /* GraveViewModelTests.swift in Sources */,
+				017B69A12330FFDD00A82323 /* MockNetworkEngine.swift in Sources */,
+				01E20B9823367400005EAA43 /* SearchModelTests.swift in Sources */,
+				01E20B9A2336750F005EAA43 /* DelegateSpies.swift in Sources */,
 				01050F682262030C004404B6 /* DebouncerTests.swift in Sources */,
-				01050F6C2262030C004404B6 /* CemeteriesServiceTests.swift in Sources */,
+				01E20B96233672C1005EAA43 /* CemeteryModelTests.swift in Sources */,
 				01050F6A2262030C004404B6 /* GraveTests.swift in Sources */,
-				01050F6D2262030C004404B6 /* GravesServiceTests.swift in Sources */,
 				01050F6B2262030C004404B6 /* CemeteryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

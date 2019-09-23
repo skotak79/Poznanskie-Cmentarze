@@ -15,12 +15,27 @@ extension String {
         return attributedString
     }
 
-    func toDate() -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: self)
-
-        return date!
-    }
+//    func toDate() -> Date {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        let date = dateFormatter.date(from: self)
+//
+//        return date!
+//    }
+//
+//        private static let dateSafeCharacters = CharacterSet(charactersIn: "0123456789- ")
+//
+//        public func convertedToDateSafeFormat() -> String? {
+//            if let latin = self.applyingTransform(StringTransform("Any-Latin; Latin-ASCII; Lower;"), reverse: false) {
+//                let urlComponents = latin.components(separatedBy: String.dateSafeCharacters.inverted)
+//                let result = urlComponents.filter { $0 != "" }.joined(separator: "-")
+//
+//                if !result.isEmpty {
+//                    return result
+//                }
+//            }
+//
+//            return nil
+//        }
 }

@@ -34,15 +34,13 @@ class PoznanskieCmentarzeUITests: XCTestCase {
         button.tap()
     }
     func testGraveSearch() {
+        app.launch()
         let tabBar = app.tabBars.element(boundBy: 0)
-        //let tabBar = tabBars.tabs.element(boundBy: 1)
-        // "Search"
         tabBar.buttons["Wyszukiwarka"].tap()
         let searchField = app.searchFields.element(boundBy: 0)
         searchField.tap()
         searchField.typeText("Jan nowak")
-        /// ???
-        let tableView = app.tables.element(boundBy: 1)
+        let tableView = app.tables.element(boundBy: 0)
         _ = tableView.waitForExistence(timeout: 8)
         let firstCell = tableView.cells.element(boundBy: 0)
         firstCell.tap()

@@ -10,16 +10,17 @@ import UIKit
 import MapKit
 
 /// Show detailed information of the grave
-final class GraveDetailViewController: BaseController<DetailView>, DetailViewController {
+final class GraveDetailViewController: BaseController<DetailView>, DetailViewControllerType {
     
     private let graveViewModel: GraveViewModel
-    var openMaps: ((CLLocationCoordinate2D, String) -> Void)?
     
     // MARK: - Init
     
     required init(graveViewModel: GraveViewModel) {
         self.graveViewModel = graveViewModel
         super.init(nibName: nil, bundle: nil)
+        self.title = graveViewModel.nameAndSurname
+        self.hidesBottomBarWhenPushed = true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -30,10 +31,13 @@ final class GraveDetailViewController: BaseController<DetailView>, DetailViewCon
 
     override func viewDidLoad() {
         super.loadView()
+
         view.backgroundColor = Color.background
         setup()
-        update(graveViewModel: graveViewModel)
+        update(with: graveViewModel)
     }
+
+    // MARK: - Setup
 
     private func setup() {
         setupNavigationButton()
@@ -45,7 +49,7 @@ final class GraveDetailViewController: BaseController<DetailView>, DetailViewCon
         self.navigationItem.rightBarButtonItem = navigateButton
     }
 
-    private func update(graveViewModel: GraveViewModel) {
+    private func update(with graveViewModel: GraveViewModel) {
         if let location = graveViewModel.location {
             let region = MKCoordinateRegion(center: location, latitudinalMeters: 500, longitudinalMeters: 500)
             root.mapView.setRegion(region, animated: true)
@@ -64,7 +68,7 @@ final class GraveDetailViewController: BaseController<DetailView>, DetailViewCon
 
     @objc private func openMapsButtonTouched() {
         if let location = graveViewModel.location {
-            openMaps?(location, "Miejsce spoczynku osoby: \(graveViewModel.nameAndSurname)")
+            navigationController?.displayMapsWarning(coordinates: location, description: "Miejsce spoczynku osoby: \(graveViewModel.nameAndSurname)")
         }
     }
 }

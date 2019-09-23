@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ABJ-Jg-LR2">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Cmentarze-->
+        <scene sceneID="YL2-bQ-wKd">
+            <objects>
+                <navigationController id="acZ-wb-P33" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cmentarze" image="list" id="ZnL-lm-Mkc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eMA-WS-AT6">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yH6-tk-8rw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="-163.30049261083744"/>
+        </scene>
+        <!--Info-->
+        <scene sceneID="K4d-oX-PKO">
+            <objects>
+                <viewController id="gvK-7A-rd3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rmx-56-263">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPY-AZ-2Lc">
+                                <rect key="frame" x="16" y="44" width="343" height="685"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Poznańskie Cmentarze - wyszukiwarka miejsca pochówku, autor Wojciech Skotak (2019)
+Aplikacja korzysta z danych platformy http://www.poznan.pl/api udostępnianej przez Urząd Miasta Poznania.
+ Aby wyszukiwarka uwzględniała cmentarze Samotna i Lubowska należy obowiązkowo podawać imię(imiona) i nazwisko.
+ Ikona aplikacji - Grave, autorstwa Nicka Novell, strona The Noun Project, zdjęcie launchscreen autorstwa Eddiego Howella, strona Unsplash</mutableString>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YPY-AZ-2Lc" firstAttribute="top" secondItem="N0E-qt-GXX" secondAttribute="top" id="3yj-RC-Hyi"/>
+                            <constraint firstItem="YPY-AZ-2Lc" firstAttribute="bottom" secondItem="N0E-qt-GXX" secondAttribute="bottom" id="6GI-7j-KR8"/>
+                            <constraint firstItem="N0E-qt-GXX" firstAttribute="trailing" secondItem="YPY-AZ-2Lc" secondAttribute="trailing" constant="16" id="Y2I-3Z-bZF"/>
+                            <constraint firstItem="YPY-AZ-2Lc" firstAttribute="leading" secondItem="N0E-qt-GXX" secondAttribute="leading" constant="16" id="fOz-zQ-AU9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N0E-qt-GXX"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Info" image="info" id="fHu-ZJ-ugb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7FC-fV-JJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258.39999999999998" y="863.79310344827593"/>
+        </scene>
+        <!--Wyszukiwarka-->
+        <scene sceneID="Evz-3V-pPy">
+            <objects>
+                <navigationController id="k9I-cd-Dxn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Wyszukiwarka" image="search" id="SHq-VN-dUE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="von-hb-LMX">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8G-4c-bsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="492"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aj7-oI-Ou2">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ABJ-Jg-LR2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HJk-hx-wNW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="acZ-wb-P33" kind="relationship" relationship="viewControllers" id="GOD-Zf-4S7"/>
+                        <segue destination="k9I-cd-Dxn" kind="relationship" relationship="viewControllers" id="Rq5-dt-DrO"/>
+                        <segue destination="gvK-7A-rd3" kind="relationship" relationship="viewControllers" id="NXe-1D-glp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YL6-VZ-V55" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-642.39999999999998" y="159.60591133004928"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info" width="24" height="24"/>
+        <image name="list" width="24" height="24"/>
+        <image name="search" width="24" height="24"/>
+    </resources>
 </document>
