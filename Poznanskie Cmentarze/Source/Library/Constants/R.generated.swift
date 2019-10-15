@@ -88,16 +88,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 6 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
     /// Image `Default-568h`.
     static let default568h = Rswift.ImageResource(bundle: R.hostingBundle, name: "Default-568h")
-    /// Image `info`.
-    static let info = Rswift.ImageResource(bundle: R.hostingBundle, name: "info")
     /// Image `launchImage`.
     static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "launchImage")
-    /// Image `list`.
-    static let list = Rswift.ImageResource(bundle: R.hostingBundle, name: "list")
     /// Image `notFound`.
     static let notFound = Rswift.ImageResource(bundle: R.hostingBundle, name: "notFound")
     /// Image `search`.
@@ -108,19 +104,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.default568h, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "info", bundle: ..., traitCollection: ...)`
-    static func info(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.info, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "launchImage", bundle: ..., traitCollection: ...)`
     static func launchImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.launchImage, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "list", bundle: ..., traitCollection: ...)`
-    static func list(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.list, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "notFound", bundle: ..., traitCollection: ...)`
@@ -202,9 +188,9 @@ struct _R: Rswift.Validatable {
       let name = "Main"
       
       static func validate() throws {
-        if UIKit.UIImage(named: "info", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'info' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "list", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'list' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "search", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'search' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "info.circle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'info.circle' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "list.bullet", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'list.bullet' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "magnifyingglass", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'magnifyingglass' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

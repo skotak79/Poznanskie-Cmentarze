@@ -26,6 +26,5 @@ final class CemeteryCell: UITableViewCell {
     private func setup() {
         self.accessoryType = .disclosureIndicator
         backgroundColor = UIColor.white
-        contentView.backgroundColor = UIColor.white
     }
 }

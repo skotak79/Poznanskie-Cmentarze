@@ -68,21 +68,14 @@ final class SearchViewController: UIViewController {
     private func setupSearchController() {
 
         self.searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
-        searchController.searchBar.showsCancelButton = true
         searchController.searchBar.keyboardType = .alphabet
         searchController.searchBar.placeholder = "Nazwisko lub Imię(Imiona) Nazwisko"
-
-        if #available(iOS 11.0, *) {
-            navigationItem.searchController = searchController
-            navigationItem.hidesSearchBarWhenScrolling = false
-        } else {
-            listController.tableView.tableHeaderView = searchController.searchBar
-        }
-
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         searchController.delegate = self
-        searchController.dimsBackgroundDuringPresentation = false
+        searchController.automaticallyShowsCancelButton = true
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         definesPresentationContext = true
     }
@@ -104,8 +97,8 @@ final class SearchViewController: UIViewController {
     // MARK: - Make
 
     private func makeLoadingIndicator() -> UIActivityIndicatorView {
-
-        let view = UIActivityIndicatorView(style: .whiteLarge)
+        let view = UIActivityIndicatorView()
+        view.style = .large
         view.color = .darkGray
         view.hidesWhenStopped = true
         return view
@@ -153,7 +146,6 @@ extension SearchViewController: SearchModelDelegate {
 }
 
 extension SearchViewController: UISearchBarDelegate {
-
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty {
             searchModel.fetchGraves(with: searchText)
@@ -194,9 +186,3 @@ extension SearchViewController: CemeteryModelDelegate {
 }
 
 extension SearchViewController: UISearchControllerDelegate {}
-
-extension SearchViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        // no op
-    }
-}

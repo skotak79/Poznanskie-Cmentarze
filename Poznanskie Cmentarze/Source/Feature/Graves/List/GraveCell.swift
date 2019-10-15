@@ -25,6 +25,5 @@ final class GraveCell: UITableViewCell {
     private func setup() {
         self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         backgroundColor = UIColor.white
-        contentView.backgroundColor = UIColor.white
     }
 }
