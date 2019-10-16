@@ -10,7 +10,6 @@ import UIKit
 
 final class SearchViewController: UIViewController {
 
-    private var viewModels = [GraveViewModel]()
     private var cemeteriesIdWithNames: [Int: String] = [:] {
         didSet {
             self.hideLoadingIndicator()
@@ -21,7 +20,8 @@ final class SearchViewController: UIViewController {
     private let cemeteryModel: CemeteryModel
     private let searchModel: SearchModel
     private var searchController: UISearchController!
-    private var listController = GraveListViewController()
+    private(set) var tableView: UITableView!
+    let adapter = Adapter<GraveViewModel, GraveCell>()
 
     private lazy var loadingIndicator: UIActivityIndicatorView = self.makeLoadingIndicator()
 
@@ -43,7 +43,7 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         title = "Wyszukiwarka"
-        setupListController()
+        setupTableView()
         setupSearchController()
         setupIndicator()
         setupEmptyView()
@@ -59,10 +59,25 @@ final class SearchViewController: UIViewController {
 
     // MARK: - Setup
 
-    private func setupListController() {
-        add(childViewController: listController)
-        listController.tableView.delegate = self
-        listController.tableView.dataSource = self
+    private func setupTableView() {
+
+        tableView = UITableView(frame: .zero, style: .plain)
+        tableView.delegate = adapter
+        tableView.dataSource = adapter
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
+        tableView.register(GraveCell.self, forCellReuseIdentifier: "GraveCell")
+        tableView.backgroundColor = .white
+        tableView.alwaysBounceVertical = true
+        adapter.configure = { graveViewModel, cell in
+            cell.textLabel?.attributedText = graveViewModel.attributedTitle
+            cell.detailTextLabel?.attributedText = graveViewModel.attributedSubtitle
+        }
+        adapter.select = { [weak self] graveViewModel in
+            self?.startDetail(with: graveViewModel)
+        }
+        view.addSubview(tableView)
+        NSLayoutConstraint.pin(view: tableView, toEdgesOf: view)
     }
 
     private func setupSearchController() {
@@ -117,6 +132,11 @@ final class SearchViewController: UIViewController {
             self.loadingIndicator.stopAnimating()
         }
     }
+
+    private func startDetail(with graveViewModel: GraveViewModel) {
+        let graveDetailViewController = GraveDetailViewController(graveViewModel: graveViewModel)
+        navigationController?.pushViewController(graveDetailViewController, animated: true)
+    }
 }
 
 extension SearchViewController: SearchModelDelegate {
@@ -133,11 +153,11 @@ extension SearchViewController: SearchModelDelegate {
 
     func searchModel(_ searchModel: SearchModel, didFetched graves: [Grave]) {
         let viewModels = graves.map {GraveViewModel.init(grave: $0, cemeteryIdsWithNames: cemeteriesIdWithNames)}.sorted(by: >)
-        self.viewModels = viewModels
+        adapter.items = viewModels
         hideLoadingIndicator()
         DispatchQueue.main.async {
             print(graves.count)
-            self.listController.tableView.reloadData()
+            self.tableView.reloadData()
             UIView.animate(withDuration: 0.25, animations: {
                 self.emptyView.alpha = graves.isEmpty ? 1 : 0
             })
@@ -150,30 +170,6 @@ extension SearchViewController: UISearchBarDelegate {
         if !searchText.isEmpty {
             searchModel.fetchGraves(with: searchText)
         }
-    }
-}
-
-extension SearchViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let graveViewModel = viewModels[indexPath.row]
-        let detailViewController = GraveDetailViewController(graveViewModel: graveViewModel)
-        navigationController?.pushViewController(detailViewController, animated: true)
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-}
-
-extension SearchViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // swiftlint:disable force_cast
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GraveCell.self), for: indexPath) as! GraveCell
-        let item = viewModels[indexPath.row]
-        cell.textLabel?.attributedText = item.attributedTitle
-        cell.detailTextLabel?.attributedText = item.attributedSubtitle
-        return cell
     }
 }
 

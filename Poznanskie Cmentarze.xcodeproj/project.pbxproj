@@ -65,7 +65,6 @@
 		01DA8485232CF7A900BEEAEC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA8484232CF7A900BEEAEC /* Request.swift */; };
 		01DA8487232CF9BB00BEEAEC /* CemeteryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA8486232CF9BB00BEEAEC /* CemeteryRequest.swift */; };
 		01DA8489232CFA8A00BEEAEC /* GraveRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA8488232CFA8A00BEEAEC /* GraveRequest.swift */; };
-		01DA848B232D0A4D00BEEAEC /* GraveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA848A232D0A4D00BEEAEC /* GraveListViewController.swift */; };
 		01DD6478232FE7B5005ECA74 /* Date+isValid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DD6477232FE7B5005ECA74 /* Date+isValid.swift */; };
 		01E20B96233672C1005EAA43 /* CemeteryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E20B95233672C1005EAA43 /* CemeteryModelTests.swift */; };
 		01E20B9823367400005EAA43 /* SearchModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E20B9723367400005EAA43 /* SearchModelTests.swift */; };
@@ -158,7 +157,6 @@
 		01DA8484232CF7A900BEEAEC /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		01DA8486232CF9BB00BEEAEC /* CemeteryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CemeteryRequest.swift; sourceTree = "<group>"; };
 		01DA8488232CFA8A00BEEAEC /* GraveRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveRequest.swift; sourceTree = "<group>"; };
-		01DA848A232D0A4D00BEEAEC /* GraveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveListViewController.swift; sourceTree = "<group>"; };
 		01DD6477232FE7B5005ECA74 /* Date+isValid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+isValid.swift"; sourceTree = "<group>"; };
 		01E20B95233672C1005EAA43 /* CemeteryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CemeteryModelTests.swift; sourceTree = "<group>"; };
 		01E20B9723367400005EAA43 /* SearchModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelTests.swift; sourceTree = "<group>"; };
@@ -449,7 +447,6 @@
 		01050F182261F7EB004404B6 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				01DA848A232D0A4D00BEEAEC /* GraveListViewController.swift */,
 				01050F1A2261F7EB004404B6 /* GraveCell.swift */,
 			);
 			path = List;
@@ -868,7 +865,6 @@
 				016506712321613F003F63FB /* String+Extensions.swift in Sources */,
 				01D838A32264F4D0006802B3 /* R.generated.swift in Sources */,
 				01DA8489232CFA8A00BEEAEC /* GraveRequest.swift in Sources */,
-				01DA848B232D0A4D00BEEAEC /* GraveListViewController.swift in Sources */,
 				011656A8232906A1008A15AC /* CemeteryViewController.swift in Sources */,
 				01050F282261F7EB004404B6 /* AppDelegate.swift in Sources */,
 				01050F3B2261F7EB004404B6 /* EmptyView.swift in Sources */,
